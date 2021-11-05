@@ -32,7 +32,7 @@
   });
 </script>
 
-<h2>Exo 3-2</h2>
+<h3>Exo 3-2</h3>
 {#if ready}
   {#if tweets.length}
     <div>{tweets.length}</div>

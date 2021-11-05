@@ -1,5 +1,6 @@
 <script>
-  import Files from './Files.svelte';
+  import Files from '$lib/Files.svelte';
+
   const files = {
     documents: {
       CVs: {
@@ -26,6 +27,6 @@
   };
 </script>
 
-<h2>Exo 3-6</h2>
+<h3>Exo 3-6</h3>
 
 <Files {files} />

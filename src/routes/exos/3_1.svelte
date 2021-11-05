@@ -1,10 +1,10 @@
 <script>
-  import Clock from './Clock.svelte';
+  import Clock from '$lib/Clock.svelte';
 
   let show = false;
 </script>
 
-<h2>Exo 3-1</h2>
+<h3>Exo 3-1</h3>
 <button on:click={() => (show = !show)}>Afficher heure</button>
 {#if show}
   <Clock />
