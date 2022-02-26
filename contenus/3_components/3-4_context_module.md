@@ -37,8 +37,8 @@ Ces exports fonctionnent comme des `export` classiques. La seule différence est
 </script>
 ```
 
-## Exos
+<!-- ## Exos
 
-- Des notes que l'on peut ouvrir, mais seulement une par une (ouvrir l'une ferme celle qui était ouverte précédemment)
+- Des notes que l'on peut ouvrir, mais seulement une par une (ouvrir l'une ferme celle qui était ouverte précédemment) -->
 
 ## à suivre: [Composants spéciaux](./3-5_special_components.md)

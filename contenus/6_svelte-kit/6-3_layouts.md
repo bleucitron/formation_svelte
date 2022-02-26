@@ -1,4 +1,4 @@
-# [Layouts](https://kit.svelte.dev/docs#layouts)
+# [Layouts](https://kit.svelte.dev/docs/layouts)
 
 Souvent, plusieurs pages partagement un agencement similaire, avec par exemple un header et un footer en commun.
 
@@ -27,6 +27,7 @@ Dès lors, toutes mes pages auront ce `<nav>` en plus, sans avoir besoin de le p
 On peut également ajouter des layouts nestés, c'est-à-dire des layouts qui vont venir se cumuler avec d'autres layouts.
 
 Supposons cette architecture:
+
 ```
 src/
   routes/
@@ -59,7 +60,7 @@ src/
     __layout.svelte
 ```
 
-## [Pages d'erreur](https://kit.svelte.dev/docs#layouts-error-pages)
+## [Pages d'erreur](https://kit.svelte.dev/docs/layouts#error-pages)
 
 De la même façon que pour les layouts, on peut préparer des pages d'erreur. Ces pages s'afficheront si quelque chose se passe mal sur votre page.
 

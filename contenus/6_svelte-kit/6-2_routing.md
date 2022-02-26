@@ -26,7 +26,7 @@ Dans SvelteKit, **toutes les pages de notre application sont des composants**.
 <h1>Plus d'infos sur ma modeste personne</h1>
 ```
 
-Chacune de ces pages sera rendue côté serveur avant d'être envoyé au client pour permettre un affichage optimisé (et ne pas heurter le SEO). Une fois que la page est construite côté serveur, elle est envoyée côté client, ce qui permet l'affichage de la page au moment même de sa réception: pas besoin d'attendre que Javascript ait fini de s'exécuter pour voir quelque chose à l'écran.
+Chacune de ces pages sera rendue côté serveur avant d'être envoyée au client pour permettre un affichage optimisé (et ne pas heurter le SEO). Une fois que la page est construite côté serveur, elle est envoyée côté client, ce qui permet l'affichage de la page au moment même de sa réception: pas besoin d'attendre que Javascript ait fini de s'exécuter pour voir quelque chose à l'écran.
 
 Toutefois, ce premier rendu, très rapide, n'est pas encore interactif. Il faut attendre que le router client prenne le relais, et regénère la page pour que toute la logique Svelte soit en place.
 
@@ -47,6 +47,7 @@ Pour des cas plus complexes:
 `https://www.univers.com/geographie/france/33/bordeaux`
 
 On peut aussi fournir plusieurs arguments: `geographie/[pays]/[departement]/[ville].svelte` rendra disponible dans notre composant de page les infos:
+
 ```js
 {
   pays: 'france',
@@ -56,9 +57,10 @@ On peut aussi fournir plusieurs arguments: `geographie/[pays]/[departement]/[vil
 ```
 
 Si jamais on ne connait pas le nombre d'arguments à l'avance, il est possible d'utiliser le `...`: `geographie/[...args].svelte` donnera
+
 ```js
 {
-  args: 'france/33/bordeaux'
+  args: 'france/33/bordeaux';
 }
 ```
 

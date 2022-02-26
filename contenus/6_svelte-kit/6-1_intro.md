@@ -3,6 +3,7 @@
 SvelteKit fait partie de la famille des meta-frameworks, aussi appelés application-frameworks.
 
 Parmi ces meta-frameworks, on retrouve:
+
 - [Next](https://nextjs.org/), pour React
 - [Gatsby](https://www.gatsbyjs.com/), pour React
 - [Nuxt](https://nuxtjs.org/), pour Vue
@@ -20,9 +21,10 @@ Utiliser un framework de composants, c'est embrasser une certaine philosophie, s
 
 Un meta-framework (ou application-framework) pousse le curseur encore plus loin: les frameworks de composants ne fournissent pas de méthodes ou de bonnes pratiques pour construire une application web. On a certes des briques unitaires, les composants, mais c'est tout.
 
-Au contraire, **un meta-framework fournit une boite à outils permettant d'assister les équipes de développement dans la construction d'une application**. Ils permettent de structurer, d'optimiser, et de build et de déployer facilement le code d'une application.
+Au contraire, **un meta-framework fournit une boite à outils permettant d'assister les équipes de développement dans la construction d'une application**. Ils permettent de structurer, d'optimiser, de build et de déployer facilement le code d'une application.
 
 Les outils généralement incluent:
+
 - la configuration rapide d'un projet: bundlers, transpilers, Typescript, SASS, etc...
 - des principes d'organisation de code
 - un système de routing
@@ -38,15 +40,17 @@ Avec les premiers frameworks, et notamment React, est arrivé le concept de Sing
 **Une SPA est une application entièrement contenue sur une seule page**, et dont la navigation se fait entièrement côté client.
 
 L'usage des SPA s'est rapidement démocratisé, et a amené 2 soucis:
+
 - le SEO des SPA est catastrophique, puisque tout est généré côté client
 - les performances au premier rendu des SPA sont nazes, puisque tout le code est contenu dans une seule page
 
 ### Server Side Rendering
 
-Est alors apparu le concept de SSR. Les applications sont de nouveau découpées en pages, et **chaque page servie est systématiquement générée à la demande**, envoyée au client, puis regénérée côté client par le navigateur (*hydratation*) pour mettre en place les moteurs des frameworks de composants.
+Est alors apparu le concept de SSR. Les applications sont de nouveau découpées en pages, et **chaque page servie est systématiquement générée à la demande**, envoyée au client, affichée par le client (sans JS), puis regénérée par le navigateur (_hydratation_) pour mettre en place le JS des moteurs des frameworks de composants, et rendre la page dynamique.
 
 Mais le SSR pose également quelques problèmes:
-- le serveur est énormément sollicité, car il doit regénérer plusieurs fois des pages qui parfois sont toujours les mêmes (statiques)
+
+- le serveur est énormément sollicité, car il doit regénérer plusieurs fois des pages qui parfois sont toujours les mêmes (appelées pages statiques)
 - les performances au premier rendu ne sont pas optimales pour les pages statiques, qui doivent être générés dynamiquement
 
 ### Static Site Generation
@@ -87,5 +91,3 @@ npm run dev # lance un serveur de developpement
 ```
 
 ## à suivre: [Routing](./6-2_routing.md)
-
-

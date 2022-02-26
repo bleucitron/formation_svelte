@@ -153,7 +153,7 @@ Bien sûr,
 
 ## Exos
 
-Créer un composant Slider qui prend en props une tableau et affiche les détails de chaque élément.
+Créer un composant Slider qui prend en props un tableau et affiche les détails de chaque élément.
 
 Le tableau de données peut représenter des objets culturels différents (films, chansons, livres), et donc est générique. Ce qui signifie que Slider ne sait pas à l'avance le type de données qu'on lui fournit, et ne doit pas s'en soucier.
 

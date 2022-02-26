@@ -39,7 +39,7 @@ En général, un fichier `.svelte` est séparé en 3 sections:
 
 Selon vos préférences de formattage, l'ordre peut être différent.
 
-**Les `<style>` sont scopés par défaut !!**. Ce qui signifie que les styles définis dans un fichier de composant ne s'appliqueront que pour le HTML de ce composant.
+**Les `<style>` sont scopés par défaut !!** Ce qui signifie que les styles définis dans un fichier de composant ne s'appliqueront que pour le HTML de ce composant.
 
 ## Expressions
 
