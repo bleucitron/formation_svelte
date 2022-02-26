@@ -1,8 +1,8 @@
-# [Slots](https://svelte.dev/docs#slot)
+# [Slots](https://svelte.dev/docs#template-syntax-slot)
 
 Les composants peuvent avoir des enfants, à la manière des éléments HTML.
 
-```html
+```svelte
 <Parent>
   <Enfant />
 </Parent>
@@ -10,7 +10,7 @@ Les composants peuvent avoir des enfants, à la manière des éléments HTML.
 
 Les enfants d'un composant sont disposés dans un `<slot>`.
 
-```html
+```svelte
 <!-- Parent.svelte -->
 <h1>Parent</h1>
 <slot />
@@ -18,7 +18,7 @@ Les enfants d'un composant sont disposés dans un `<slot>`.
 
 Cela permet d'adapter le contenu d'un composant en fonction de la situation.
 
-```html
+```svelte
 <Garage>
   {#if hasCar}
     <div>Voiture</div>
@@ -30,14 +30,14 @@ Cela permet d'adapter le contenu d'un composant en fonction de la situation.
 
 De plus, cela permet de faire exécuter des fonctions à des enfants sans passer par des `props`.
 
-```html
+```svelte
 <script>
-  function iDontWantToBePassedAsProps () {
-    console.log('Cette fonction doit être définie dans ce composant')
+  function handleClick () {
+    console.log('Je suis exécutée depuis un slot !')
   }
 </script>
 <Garage>
-  <div on:click={iDontWantToBePassedAsProps}>
+  <div on:click={handleClick}>
 </Garage>
 ```
 
@@ -45,7 +45,7 @@ De plus, cela permet de faire exécuter des fonctions à des enfants sans passer
 
 Un `<slot>` peut avoir un "fallback", qui sera utilisé si on ne fournit pas de slot.
 
-```html
+```svelte
 <!-- Garage.svelte -->
 <h1>Garage</h1>
 <slot>
@@ -56,55 +56,60 @@ Un `<slot>` peut avoir un "fallback", qui sera utilisé si on ne fournit pas de 
 <Garage />
 ```
 
-## Slots nommés
+## [Slots nommés](https://svelte.dev/docs#template-syntax-slot-slot-name-name)
 
 Il est possible d'envoyer des enfants dans des slots différents que l'on peut nommer.
 
-```html
+```svelte
 <!-- Maison.svelte -->
 <h1>Maison</h1>
 <slot />
-<slot name='chambre' />
-<slot name='cuisine' />
+<slot name="chambre" />
+<slot name="cuisine" />
 
 <!-- index.svelte -->
 <Maison>
-  <div>Canapé</div> <!-- est envoyé dans le slot par défaut -->
-  <div slot='chambre'>Lit</div>
-  <div slot='cuisine'>Frigo</div>
+  <div>Canapé</div>
+  <!-- est envoyé dans le slot par défaut -->
+  <div slot="chambre">Lit</div>
+  <div slot="cuisine">Frigo</div>
 </Maison>
 ```
 
 On peut également envoyer des composants dans des slots nommés.
 
-```html
+```svelte
 <Maison>
-  <Frigo slot='cuisine' />
+  <Frigo slot="cuisine" />
 </Maison>
 ```
 
 Les slots nommés sont particulièrement intéressants lorsque l'on construit un composant avec plusieurs zones différentes, le contenu de chaque zone pouvant varier selon les cas.
 
-## Slot props
+## [Slot props](https://svelte.dev/docs#template-syntax-slot-slot-key-value)
 
 Un cas classique de l'usage des slots est les boucles.
 
 Supposons le cas suivant:
-```html
+
+```svelte
 <!-- index.svelte -->
 <script>
-  import List from './List.svelte'
+  import List from './List.svelte';
 
-  const characters = [{
-    name: 'Batman',
-    type: 'hero'
-  }, {
-    name: 'Joker',
-    type: 'villain'
-  }]
+  const characters = [
+    {
+      name: 'Batman',
+      type: 'hero',
+    },
+    {
+      name: 'Joker',
+      type: 'villain',
+    },
+  ];
 </script>
 
-<List items={characters}></List>
+<List items="{characters}"></List>
 ```
 
 Notre composant `List` contient un `{#each}`. Nous voulons être capables d'instancier des `Hero` ou des `Villain` dans notre liste, mais sans que `<List>` n'ait à vérifier le type de chaque personnage. C'est important car nous voulons garder le composant `<List>` le plus générique possible.
@@ -115,39 +120,45 @@ Mais il faut instancier un `Hero` ou un `Villain` en fonction du `type`, donc il
 
 En résumé, la boucle est faite dans `<List>`, mais nous ne voulons pas différencier les personnages dans `<List>`.
 
-On peut résoudre se problème en utilisant les `slot props`.
+On peut résoudre ce problème en utilisant les `slot props`.
 
-```html
+```svelte
 <!-- index.svelte -->
-<List items={characters} let:item>
+<List items="{characters}" let:item>
   {#if item.type === 'hero'}
-    <Hero name={item.name} />
+  <Hero name="{item.name}" />
   {:else}
-    <Villain name={item.name} />
+  <Villain name="{item.name}" />
   {/if}
 </List>
 ```
 
-```html
+```svelte
 <!-- List.svelte -->
 <script>
   export let items = [];
 </script>
 
 {#each items as item}
-  <slot item={item}>
-      {item.name}
-  </slot>
+<slot item="{item}"> {item.name} </slot>
 {/each}
 ```
 
 Ainsi, on rend accessibles des variables de `<List>` dans son parent (en l'occurrence ici: chaque item).
 
 Bien sûr,
+
 - on peut déstructurer `let:item={{type, name}}`
 - on peut écrire `{item}` à la place de `item={item}`
 
+## Exos
 
-## Exos ??
+Créer un composant Slider qui prend en props une tableau et affiche les détails de chaque élément.
 
-## à suivre: [Stratégies de composition](./3-4_composition.md)
+Le tableau de données peut représenter des objets culturels différents (films, chansons, livres), et donc est générique. Ce qui signifie que Slider ne sait pas à l'avance le type de données qu'on lui fournit, et ne doit pas s'en soucier.
+
+- le Slider n'affiche toujours qu'un seul élément à la fois (la fiche d'un film, ou d'un livre)
+- le Slider permet de passer au film suivant ou précédent via des boutons.
+- le Slider doit être complètement agnostique du type de données qu'on lui fournit
+
+## à suivre: [Le contexte module](./3-4_context_module.md)

@@ -1,6 +1,6 @@
 # Autres stores
 
-## [`readable`](https://svelte.dev/docs#readable)
+## [`readable`](https://svelte.dev/docs#run-time-svelte-store-readable)
 
 Parfois, on ne souhaite pas qu'un store puisse être modifié de l'"extérieur", tout en ayant sa valeur globalement accessible en lecture.
 
@@ -13,11 +13,12 @@ const count = readable(0);
 ```
 
 Des cas d'utilisation classiques:
+
 - position géolocalisée
 - heure actuelle
 - position de la souris
 
-## [`derived`](https://svelte.dev/docs#derived)
+## [`derived`](https://svelte.dev/docs#run-time-svelte-store-derived)
 
 Le store `derived` permet de créer des stores dérivés d'un ou plusieurs autres stores.
 
@@ -27,7 +28,10 @@ import { writable, derived } from 'svelte/store';
 const savings = writable(0);
 const money = writable(0);
 
-const total = derived([savings, money], ([$savings, $money]) => $savings + $money); // dépend de plusieurs autres stores
+const total = derived(
+  [savings, money],
+  ([$savings, $money]) => $savings + $money,
+); // dépend de plusieurs autres stores
 const totalInYens = derived(total, $total => $total * 100); // dépend de un seul autre store
 ```
 
@@ -43,11 +47,12 @@ Par exemple, on peut créer un store à partir d'un `writable` qui n'expose pas 
 function createCount() {
   const { subscribe, set, update } = writable(0); // on initialise un writable classique
 
-  return { // on retourne un store custom
+  return {
+    // on retourne un store custom
     subscribe,
     increment: () => update(n => n + 1),
     decrement: () => update(n => n - 1),
-    reset: () => set(0)
+    reset: () => set(0),
   };
 }
 

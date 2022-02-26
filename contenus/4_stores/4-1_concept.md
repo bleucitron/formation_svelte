@@ -11,6 +11,7 @@ Avec l'avènement du modèle d'architecture par composants (en gros depuis 2014)
 Dans ce modèle là, un des grands principes est que le `state` d'un composant a une zone d'influence.
 
 Cette zone d'influence est l'ensemble des composants où un `state` donné existe. Elle inclut donc:
+
 - le composant qui définit le state, et est donc le seul à pouvoir le modifier
 - tous les enfants de ce composant, où le state peut être fourni en props, et où on peut utiliser une procuration pour modifier le state du parent
 
@@ -33,7 +34,7 @@ De manière générale, il faut essayer d'éviter de connecter trop de composant
 
 ### Mauvaise lisibilité
 
-Trop de composants connectés rend difficile la compréhension de comment circule la donnée. Pour être plus précis, la donnée circule alors toujours en passant par le store, ce qui fait des aller-retours pas strictement nécessaires.
+Trop de composants connectés rend difficile la compréhension de comment circule la donnée. Pour être plus précis, la donnée circule alors toujours en passant par le store, ce qui fait des aller-retours pas toujours strictement nécessaires.
 
 ### Compromission du `state`
 

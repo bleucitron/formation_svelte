@@ -2,7 +2,7 @@
 
 HTML ne permet pas d'exprimer de la logique, via des boucles ou encore des conditions. Svelte compense ce manque en ajoutant des blocks de compilation.
 
-## [`if` / `else`](https://svelte.dev/docs#if)
+## [`if` / `else`](https://svelte.dev/docs#template-syntax-if)
 
 On peut conditionner l'affichage au sein d'un composant Svelte avec `{#if}...{:else}...{/if}`.
 
@@ -16,7 +16,7 @@ On peut conditionner l'affichage au sein d'un composant Svelte avec `{#if}...{:e
 {/if}
 ```
 
-## [`each`](https://svelte.dev/docs#each)
+## [`each`](https://svelte.dev/docs#template-syntax-each)
 
 `{#each}...{/each}` permet de boucler sur tableau et afficher du markup pour chaque élément.
 
@@ -60,7 +60,7 @@ En ajoutant une clé unique et persistante, on peut aider le compilateur à dét
 {/each}
 ```
 
-## [`await`](https://svelte.dev/docs#await)
+## [`await`](https://svelte.dev/docs#template-syntax-await)
 
 La gestion des Promesses est accessible grâce aux blocks `{#await}`.
 
@@ -128,7 +128,7 @@ Le tag `@const` permet de définir une variable `const` dans certains blocks, co
 {/each}
 ```
 
-### [`@html`](https://svelte.dev/docs#html)
+### [`@html`](https://svelte.dev/docs#template-syntax-html)
 
 On peut intégrer du HTML pur avec `{@html}`
 

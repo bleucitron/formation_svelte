@@ -3,9 +3,9 @@
 On a vu que l'on pouvait déclarer des listeners de cette façon.
 
 ```html
-<div on:click={clickHandler} />
-<div on:mousemove={moveHandler} />
-<div on:scroll={scrollHandler} />
+<div on:click="{clickHandler}" />
+<div on:mousemove="{moveHandler}" />
+<div on:scroll="{scrollHandler}" />
 
 <!-- Inline handlers -->
 <div on:click={() => console.log("click")} />
@@ -16,13 +16,9 @@ On a vu que l'on pouvait déclarer des listeners de cette façon.
 Svelte propose des raccourcis pour gérer certains cas.
 
 ```html
-<div on:click={e => {
-  e.stopPropagation();
-  console.log('click');
-}} />
-
-<div on:click|stopPropagation={() => console.log('click')}/>
-  ```
+<div on:click={e => { e.stopPropagation(); console.log('click'); }} /> <div
+on:click|stopPropagation={() => console.log('click')}/>
+```
 
 Les cas possibles sont:
 
@@ -55,15 +51,15 @@ Il est possible de générer des évènements de composants via `createEventDisp
 
   function sayHello() {
     dispatch('message', {
-      text: 'Coucou !'
+      text: 'Coucou !',
     });
   }
 </script>
 
-<button on:click={sayHello}>Hey</button>
+<button on:click="{sayHello}">Hey</button>
 ```
 
-Dans ce cas, un évènement personnalisé est généré, et peut être écouté par le parent comme avec un élément DOM normal.
+Dans ce cas, un évènement personnalisé est généré, et peut être écouté par le parent comme avec un évènement DOM normal.
 
 La donnée éventuellement fournie lors du `dispatch` est disponible dans le `e.detail`.
 
@@ -77,21 +73,22 @@ La donnée éventuellement fournie lors du `dispatch` est disponible dans le `e.
   }
 </script>
 
-<Coucou on:message={handleMessage}> <!-- on écrit on:message parce que l'on a écrit dispatch('message') -->
+<Coucou on:message="{handleMessage}">
+  <!-- on écrit on:message parce que l'on a écrit dispatch('message') --></Coucou
+>
 ```
 
-`createEventDispatcher` doit être appelé à la racine du script.
-
+_`createEventDispatcher` doit être appelé à la racine du script._
 
 ## Relais d'évènements (event forwarding)
 
 Lorsque l'on travaille avec des arbres de composants un peu profonds, il arrive d'avoir à faire relayer une `prop` de type fonction sur plusieurs étages pour la fournir à un composant enfant.
 
-Dans ce cas on dit souvent que **les évènements remontent**, mais cela peut s'interprêter **donner procuration aux enfants**.
+Dans ce cas on dit souvent que **les évènements remontent**, mais cela peut s'interprêter comme **donner procuration aux enfants**.
 
 Sur plusieurs étages, ça rajoute du boilerplate, c'est un peu pénible à écrire, et donc à maintenir.
 
-Svelte propose une syntaxe pour simplifier le relais: **le relais d'évènements**, qui pour le coup fait réellement remonter les évènements.
+Svelte propose une syntaxe pour simplifier le relais: **le relais d'évènements**, qui pour le coup fait réellement remonter les évènements, plutôt que descendre des callbacks.
 
 ```html
 <!-- Supposons une architecture imbriquée dans plusieurs fichiers -->
@@ -102,9 +99,4 @@ Svelte propose une syntaxe pour simplifier le relais: **le relais d'évènements
 
 Cela fonctionne aussi bien pour les évènements de composants que pour les évènements de composants.
 
-## Exos ??
-
 ## à suivre: [Composition](./3-3_slots.md)
-
-
-

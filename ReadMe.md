@@ -40,11 +40,9 @@
 
 ### [Slots](./contenus/3_components/3-3_slots.md)
 
-### [Réflexion sur la composition](./contenus/3_components/3-4_composition.md)
+### [Module context](./contenus/3_components/3-4_context_module.md)
 
-### [Module context](./contenus/3_components/3-5_context_module.md)
-
-### [Special components](./contenus/3_components/3-6_special.md)
+### [Special components](./contenus/3_components/3-5_special.md)
 
 (Début du projet fil-rouge)
 

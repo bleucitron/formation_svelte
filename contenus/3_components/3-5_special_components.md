@@ -2,96 +2,92 @@
 
 Il existe certains composants spéciaux en Svelte.
 
-## [`<svelte:self>`](https://svelte.dev/docs#svelte_self)
+## [`<svelte:self>`](https://svelte.dev/docs#template-syntax-svelte-self)
 
 Permet à un composant de s'inclure lui-même.
 
-Ne peut pas être placé à la racine du markup, au risque de provoquer une boucle infinie.
+**Ne peut pas être placé à la racine du markup**, au risque de provoquer une boucle infinie.
 
-```html
+```svelte
 <script>
-	export let count = 10;
+  export let count = 10;
 </script>
 
 {#if count > 0}
-	<p>counting down... {count}</p>
-	<svelte:self count="{count - 1}"/>
+  <p>counting down... {count}</p>
+  <svelte:self count="{count - 1}"/>
 {:else}
-	<p>lift-off!</p>
+  <p>lift-off!</p>
 {/if}
 ```
 
-
-## [`<svelte:fragment>`](https://svelte.dev/docs#svelte_component)
+## [`<svelte:fragment>`](https://svelte.dev/docs#template-syntax-svelte-fragment)
 
 Permet d'utiliser des slots nommés sans rajouter un étage artificiel.
 
-```html
+```svelte
 <!-- Widget.svelte -->
 <div>
-	<slot name="header">No header was provided</slot>
-	<p>Some content between header and footer</p>
-	<slot name="footer"></slot>
+  <slot name="header">No header was provided</slot>
+  <p>Some content between header and footer</p>
+  <slot name="footer"></slot>
 </div>
 
 <!-- App.svelte -->
 <Widget>
-	<h1 slot="header">Hello</h1>
-	<svelte:fragment slot="footer">
-		<p>All rights reserved.</p>
-		<p>Copyright (c) 2019 Svelte Industries</p>
-	</svelte:fragment>
+  <h1 slot="header">Hello</h1>
+  <svelte:fragment slot="footer">
+    <p>All rights reserved.</p>
+    <p>Copyright (c) 2019 Svelte Industries</p>
+  </svelte:fragment>
 </Widget>
 ```
 
-## [`<svelte:component>`](https://svelte.dev/docs#svelte_fragment)
+## [`<svelte:component>`](https://svelte.dev/docs#template-syntax-svelte-component)
 
 Permet d'instancier un composant dynamiquement.
 
-```html
+```svelte
 <svelte:component this={blabla.component} />
 ```
 
-## [`<svelte:window>`](https://svelte.dev/docs#svelte_window)
+## [`<svelte:window>`](https://svelte.dev/docs#template-syntax-svelte-window)
 
 Permet d'utiliser des event listeners sur la `window` sans se soucier de les supprimer lors de l'éventuelle destruction du composant.
 
-```html
+```svelte
 <svelte:window on:scroll={() => console.log('Scrolling')}/>
 ```
 
 `<svelte:window>` doit être placé à la racine du markup.
 
-
-## [`<svelte:body>`](https://svelte.dev/docs#svelte_body)
+## [`<svelte:body>`](https://svelte.dev/docs#template-syntax-svelte-body)
 
 Permet d'utiliser des event listeners sur le `body` sans se soucier de les supprimer lors de l'éventuelle destruction du composant.
 
-```html
+```svelte
 <svelte:body on:mouseenter={() => console.log('Entering body')}/>
 ```
 
 `<svelte:body>` doit être placé à la racine du markup.
 
-
-## [`<svelte:head>`](https://svelte.dev/docs#svelte_head)
+## [`<svelte:head>`](https://svelte.dev/docs#template-syntax-svelte-head)
 
 Permet d'ajouter des éléments dans le `<head>`.
 
-```html
+```svelte
 <svelte:head>
-	<link rel="stylesheet" href="tutorial/dark-theme.css">
+  <link rel="stylesheet" href="tutorial/dark-theme.css">
 </svelte:head>
 ```
 
 `<svelte:head>` doit être placé à la racine du markup.
 
-
-## [`<svelte:options>`](https://svelte.dev/docs#svelte_options)
+## [`<svelte:options>`](https://svelte.dev/docs#template-syntax-svelte-options)
 
 Permet de fournir au compilateur des options spécifiques au composant.
 
-```html
+```svelte
 <svelte:options tag="my-custom-element"/>
 ```
 
@@ -128,7 +124,6 @@ const files = {
     'image05.jpg': 'image05.jpg',
   },
 };
-
 ```
 
 ## à suivre: [4 - Stores] [Concept](../4_stores/4-1_concept.md)

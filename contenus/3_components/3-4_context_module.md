@@ -3,7 +3,7 @@
 On peut ajouter un `<script>` special à nos composants.
 
 ```html
-<script context='module'>
+<script context="module">
   // partagé entre toutes les instances
 </script>
 <script>
@@ -11,11 +11,13 @@ On peut ajouter un `<script>` special à nos composants.
 </script>
 ```
 
+Le `<script context='module'>` est généralement peu utile, sauf avec SvelteKit.
+
 ## Partager du code entre instances
 
 Ce `<script context='module'>` est exécuté une seule fois, pour toutes les instances futures d'un composant. Cela permet de gérer des variables partagées entre les instances.
 
-La réactivité n'a pas d'effet dans un `<script context='module'>`.
+**Attention !** La réactivité n'a pas d'effet dans un `<script context='module'>`.
 
 ## Exporter du code
 
@@ -24,7 +26,7 @@ Les `<script context='module'>` permettent également d'exporter du code à l'ex
 Ces exports fonctionnent comme des `export` classiques. La seule différence est que l'on ne peut pas exporter par défaut, car l'export par défaut d'un `.svelte` est le composant lui-même.
 
 ```html
-<script context='module'>
+<script context="module">
   export function maFonction() {}
 </script>
 ```
@@ -39,4 +41,4 @@ Ces exports fonctionnent comme des `export` classiques. La seule différence est
 
 - Des notes que l'on peut ouvrir, mais seulement une par une (ouvrir l'une ferme celle qui était ouverte précédemment)
 
-## à suivre: [Composants spéciaux](./3-6_special_components.md)
+## à suivre: [Composants spéciaux](./3-5_special_components.md)

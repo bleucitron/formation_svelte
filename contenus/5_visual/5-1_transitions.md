@@ -14,7 +14,6 @@ import { fade } from 'svelte/transition';
 
 Il suffit alors d'ajouter `transition:fade` en attribut d'un élément pour que la transition soit jouée lorsque l'élément est ajouté ou supprimé du DOM.
 
-
 ```html
 <script>
   import { fade } from 'svelte/transition';
@@ -30,7 +29,7 @@ Il suffit alors d'ajouter `transition:fade` en attribut d'un élément pour que 
 {/if}
 ```
 
-En utilisant `transition:`, **la transition est reversible**. Si on clique plusieurs fois sur le bouton, la transition ne repars pas de zéro, mais de là où elle en était.
+En utilisant `transition:`, **la transition est reversible**. Si on clique plusieurs fois sur le bouton, la transition ne repart pas de zéro, mais de là où elle en était.
 
 Notez que la **transition n'est pas jouée à l'instanciation du composant**.
 
@@ -48,6 +47,7 @@ On peut fournir des paramètres aux transitions pour ajuster l'effet désiré, e
 ```
 
 Les paramètres disponibles dépendent des types de transitions choisis, mais il y a toujours:
+
 - `delay`, le temps au bout duquel la transition commence
 - `duration`, la durée de la transition
 - `easing`, une fonction de lissage
@@ -123,6 +123,7 @@ On peut régler ce souci en ajoutant `|local` à la fin de la directive.
 ## Évènements
 
 Il est possible de réagir aux débuts et fins des transitions avec des évènements spéciaux Svelte:
+
 - `on:introstart`
 - `on:outtrostart`
 - `on:introend`
@@ -131,6 +132,7 @@ Il est possible de réagir aux débuts et fins des transitions avec des évènem
 ## Toutes les transitions
 
 Les transitions disponibles par défaut sont:
+
 - [`fade`](https://svelte.dev/docs#fade)
 - [`blur`](https://svelte.dev/docs#blur)
 - [`slide`](https://svelte.dev/docs#slide)

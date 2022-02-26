@@ -1,4 +1,4 @@
-# [Le store `writable`](https://svelte.dev/docs#svelte_store)
+# [Le store `writable`](https://svelte.dev/docs#run-time-svelte-store-writable)
 
 Le store Svelte de base est `writable`.
 
@@ -14,27 +14,15 @@ Dans l'exemple ci-dessous, on a créé un store `count` dont la valeur initiale 
 
 Un store `writable` a 3 méthodes: `subscribe`, `set` et `update`.
 
-- `subscribe` permet de s'abonner à un store
+- `subscribe` permet de s'abonner aux modifications du store
 - `set` permet de modifier la valeur courante du store
-- `update` permet de modifier la valeur courante du store **en fonction de la valeur courante**
+- `update` permet de modifier la valeur du store **en fonction de la valeur courante**
 
 ```js
-count.subscribe(value => console.log('Nouvelle valeur', value)) // lorsque count change de valeur, je réagis
+count.subscribe(value => console.log('Nouvelle valeur', value)); // lorsque count change de valeur, je réagis
 count.set(1); // je me fiche de la valeur actuelle
 count.update(value => value + 1); // je veux incrémenter la valeur actuelle
 ```
-
-Il également possible de fournir un 2e argument lors de l'initialisation du store:
-
-```js
-const count = writable(0, () => {
-  console.log("Exécuté lorsque le nombre d'abonné passe de 0 à 1");
-
-  return () => console.log("Exécuté lorsque le nombre d'abonné passe de 1 à 0");
-});
-```
-
-Ce deuxième argument est une fonction qui sera exécutée lorsqu'un premier abonnement est effectuée. Si cette fonction renvoie une fonction, cette dernière sera exécutée lorsqu'il y aura plus d'abonné.
 
 ## Abonnement et réactivité
 
@@ -47,7 +35,8 @@ Voici un exemple simple d'usage dans un composant:
 
   let count_value;
 
-  const unsubscribe = count.subscribe(value => { // .subscribe() renvoie une fonction
+  const unsubscribe = count.subscribe(value => {
+    // .subscribe() renvoie une fonction permettant le désabonnement
     count_value = value;
   });
   onDestroy(unsubscribe); // se désabonner au onDestroy permet d'éviter les fuites de mémoire
@@ -61,8 +50,8 @@ Voici un exemple simple d'usage dans un composant:
 </script>
 
 <h1>The count is {count_value}</h1>
-<button on:click={increment}>+</button>
-<button on:click={reset}>Reset</button>
+<button on:click="{increment}">+</button>
+<button on:click="{reset}">Reset</button>
 ```
 
 Dans cet exemple, on s'abonne au store via `.subscribe`. La fonction que l'on passe à `subscribe` est exécutée à chaque fois que la valeur du store change, et permet de garder `count_value` en phase avec la valeur du store.
@@ -83,7 +72,7 @@ Utiliser un store dans un composant revient grosso modo à s'abonner, se désabo
   import { count } from './stores.js';
 
   function increment() {
-    $count = $count + 1 // on incrémente de 1 en 1
+    $count = $count + 1; // on incrémente de 1 en 1
   }
   function reset() {
     $count = 0; // on remet à 0
@@ -91,8 +80,8 @@ Utiliser un store dans un composant revient grosso modo à s'abonner, se désabo
 </script>
 
 <h1>The count is {$count}</h1>
-<button on:click={increment}>+</button>
-<button on:click={reset}>Reset</button>
+<button on:click="{increment}">+</button>
+<button on:click="{reset}">Reset</button>
 ```
 
 `count` représente le store, `$count` représente sa valeur courante.
