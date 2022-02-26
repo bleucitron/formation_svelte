@@ -2,9 +2,9 @@
 
 > Frameworks are not tools to organise your code, they are tools for organising your mind.
 
-L'approche que prend Svelte est donc de supprimer le plus de code possible, pour ne garder que le code nécessaire à votre application.
+L'approche que prend Svelte est donc de supprimer le plus de code possible, pour **ne garder que le code nécessaire à votre application**.
 
-Ça permet de se concentrer sur le code qui donne vraiment de la valeur ajoutée.
+Ça permet de **se concentrer sur le code qui donne vraiment de la valeur ajoutée**, et non sur du code qui ne sert qu'à bien faire marcher le framework.
 
 ## Compiler c'est la vie
 
@@ -22,21 +22,19 @@ Le bundle inclut le code de votre application, ainsi que toutes les dépendances
 
 Donc également le code de votre éventuel framework, qui pour React pèse environ 40kb gzippé (en gros: le moteur de la boucle de rendu, plus le virtual DOM).
 
-Du coup, plutôt que d'embarquer tout le code lié au fonctionnement du framework dans le bundle pour qu'il tourne dans le navigateur, pourquoi ne pas faire tout le travail difficile au moment du build, puisque de toutes façons il y a une étape de compilation ?
+Du coup, plutôt que d'embarquer tout le code lié au fonctionnement du framework dans le bundle pour qu'il tourne dans le navigateur, pourquoi ne pas faire tout le travail difficile (= la logique du framework) au moment du build, puisque de toutes façons il y a une étape de compilation ?
 
-Donc la grosse particularité de Svelte est que **c'est un compilateur**.
+**Svelte est donc un compilateur**. Ce qui en fait un framework vraiment à part.
 
-Toute la mécanique liée aux composants et à la mise à jour du DOM est donc faite programmatiquement à build-time. Le code Svelte buildé contient déjà toute l'intelligence nécessaire pour que le DOM se mette à jour correctement lors des futurs interactions. Il n'y a donc pas du tout besoin de boucle de rendu, ni de Virtual DOM.
+Toute la logique liée aux composants et à la mise à jour du DOM est donc prévue programmatiquement à build-time. Le code Svelte buildé contient déjà toute l'intelligence nécessaire pour que le DOM se mette à jour correctement et de manière optimale lors des futurs interactions. Il n'y a donc pas du tout besoin de boucle de rendu, ni de Virtual DOM.
 
 => moins de code embarqué
 => moins de code exécuté
 => moins de code écrit
 
-[GRAPHIQUES SUR LA TAILLE DES BUNDLE]
-
 ## Proche du HTML
 
-**HTML est le language du web.**
+**HTML est le language du web.** Pas Javascript.
 
 Svelte peut être considéré comme **un superset du HTML**, c'est-à-dire qu'il se base sur du HTML, et l'enrichit.
 
@@ -65,10 +63,10 @@ Svelte peut être considéré comme **un superset du HTML**, c'est-à-dire qu'il
 - Moins de code embarqué
 - Moins de code à écrire => moins de bugs potentiels
 - Facile à apprendre
-- Styles locaux
-- Stores intégrés
-- SvelteKit (par les mêmes gens)
+- Styles scopés
+- Stores natifs
 - Checks d'accessibilité intégrés
+- SvelteKit (par les mêmes gens)
 
 ```jsx
 import react, { useState } from 'react';
@@ -110,9 +108,9 @@ Mais grandissante.
 
 La contrepartie à ne pas embarquer de code de moteur de rendu, est que le code compilé de chaque composant Svelte est un petit peu plus gros que son équivalent React.
 
-Pour de grosses applications, il y aurait donc un point d'inflexion au delà duquel le bundle Svelte serait plus gros que celui de React, ce qui contredirait un de ses principaux arguments.
+Pour de grosses applications, il y aurait donc un point d'inflexion au delà duquel le bundle Svelte serait plus gros que celui de React, ce qui contredit un de ses principaux arguments.
 
-Ce point est estimé à entre 120kb et 140kb de code source. C'est tout à fait atteignable pour une application SPA, mais en pratique, cela ne pose pas vraiment de souci pour une application sur plusieurs pages associée à du code splitting et du SSR.
+Ce point est estimé à entre 120kb et 140kb de code source. C'est tout à fait atteignable pour une application SPA, mais en pratique cela ne pose pas vraiment de souci pour une application sur plusieurs pages associée à du code splitting et du SSR, qui sont les nouveaux standards de l'industrie.
 
 [GRAPHIQUES SUR LA TAILLE DES BUNDLE]
 

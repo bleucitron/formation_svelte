@@ -4,13 +4,13 @@ Au 10ème jour, [Dieu créa Javascript](https://fr.wikipedia.org/wiki/Brendan_Ei
 
 - JS vanille (1995)
 
-Mais comme c'était un peu le bordel, des initiatives offrant des utilitaires plus pratiques sont apparues au fur et à mesure.
+Mais comme **c'était un peu le bordel**, des initiatives offrant des utilitaires plus pratiques sont apparues au fur et à mesure.
 
 La populaire d'entre elles est jQuery.
 
 - [jQuery](https://jquery.com/) (2006)
 
-jQuery offre des outils utilitaires sur plein de fronts, dépassant même la simple manipulation du DOM, mais ne propose pas de réelle réflexion sur comment architecturer une application web.
+jQuery offre des outils utilitaires sur plein de fronts, dépassant même la simple manipulation du DOM, mais ne propose **pas de réelle réflexion sur comment architecturer** une application web.
 
 C'est ce que vont proposer des projets tels que Angular, Backbone, ou Ember.
 

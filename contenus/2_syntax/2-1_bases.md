@@ -39,7 +39,7 @@ En général, un fichier `.svelte` est séparé en 3 sections:
 
 Selon vos préférences de formattage, l'ordre peut être différent.
 
-**Les `<style>` sont locaux au composant !!**.
+**Les `<style>` sont scopés par défaut !!**. Ce qui signifie que les styles définis dans un fichier de composant ne s'appliqueront que pour le HTML de ce composant.
 
 ## Expressions
 
@@ -128,77 +128,9 @@ On peut écouter des évènements via ces directives, on fournissant simplement 
 <button on:click={() => age = age + 1}>Joyeux anniversaire !</button> <!-- ça marche aussi -->
 ```
 
-## Réactivité
-
-Si on veut calculer des valeurs dépendantes d'un état, il faut absolument utiliser la notion de réactivité.
-
-Pour calculer le nombre de mois équivalent à un âge, les habitués de React auraient ce genre de réflexe:
-
-```html
-<script>
-  let age = 35; // state local
-
-  const ageEnMois = age * 12;
-</script>
-
-<div>J'ai {age + 1} ans</div>
-<div>({ageEnMois} en mois)</div>
-<button on:click={() => age = age + 1}>Joyeux anniversaire !</button>
-```
-
-Dans ce cas, le nombre de mois est dérivé du nombre d'années, et devrait changer en même temps que le nombre d'années. Cela fonctionne en React car le code du script est exécuté à chaque mise à jour du composant.
-
-Mais en Svelte ce n'est pas le cas. **Un script Svelte ne tourne qu'une seule fois**, à l'instanciation du composant.
-
-**Pour déclarer une variable comme étant réactive, il faut utiliser la syntaxe `$:`**.
-
-```html
-<script>
-  let age = 35; // state local
-
-  $: ageEnMois = age * 12;
-</script>
-
-<div>J'ai {age + 1} ans</div>
-<div>({ageEnMois} en mois)</div>
-<button on:click={() => age = age + 1}>Joyeux anniversaire !</button>
-```
-
-La variable `ageEnMois` ne sera recalculée qui si `age` est mise à jour. La ligne `$: ageEnMois = age * 12` est compilée par Svelte en un équivalent qui écoute les changements de `age`, et recalcule `ageEnMois` le cas échéant.
-
-**Chaque variable réactive est liée à ses dépendances, et uniquement ses dépendances**.
-
-### Instructions réactives
-
-Il est aussi possible de déclarer des instructions comme réactives:
-
-```html
-<script>
-  $: console.log('Coucou', name); // sera réexécuté à chaque fois que `name` change
-</script>
-```
-
-```html
-<script>
-  let prixCarotte = 30;
-  let prixBanane = 50;
-
-  $: prixCarotteYen = prixCarotte * 100;
-  $: prixBananeYen = prixBanane * 100;
-</script>
-
-<h2>Prix Carotte</h2>
-<div>{prixCarotte}€ ({prixCarotteYen}¥)</div>
-<button on:click={() => prixCarotte += 1}>Monter le prix de la carotte</button>
-
-<h2>Prix Banane</h2>
-<div>{prixBanane}€ ({prixBananeYen}¥)</div>
-<button on:click={() => prixBanane += 2}>Monter le prix de la banane</button>
-```
-
 ## Props
 
-Les `props` d'un composant sont déclarées avec:
+Les `props` d'un composant sont déclarées avec `export let`:
 
 ```html
 <script>
@@ -208,11 +140,11 @@ Les `props` d'un composant sont déclarées avec:
 </script>
 ```
 
-Cela permet de fournir de la donnée au composant de la façon suivante:
+Cela permet de fournir de la donnée au composant de la façon suivante, comme en JSX:
 
 ```html
 <!-- fichier Trombinoscope.svelte -->
-<Profile nom="Romain" age={35} />
+<Profile nom="Romain" age="{35}" />
 ```
 
 Comme en JSX, on peut également déstructurer un objet pour envoyer tous les champs en tant que `props`:
@@ -233,7 +165,7 @@ Si l'on définit pas de valeur par défaut à une `prop`, et qu'on l'intancie un
 
 ```html
 <!-- Cette instanciation va déclencher 2 warnings: 1 pour le `nom` manquant, et 1 pour la `taille` qui n'est pas prévue -->
-<Profile taille={180} />
+<Profile taille="{180}" />
 ```
 
-## à suivre: [Blocks](./2-2_blocks.md)
+## à suivre: [Réactivité](./2-2_reactivity.md)

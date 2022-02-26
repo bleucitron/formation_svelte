@@ -11,7 +11,7 @@ Prenons le cas simple de la modification d'un `<input>`:
   }
 </script>
 
-<input value={text} on:input={setText} />
+<input value="{text}" on:input="{setText}" />
 ```
 
 Ce genre de code respecte la règle de la donnée "descendante". La donnée initiale de `text` est fournie par le parent à `<input>`. Lorsque l'évènement `input` se déclenche sur `<input>`, on exécute `setText` qui va modifier la value de `text`, qui est redescendue comme valeur de `<input>`.
@@ -19,7 +19,7 @@ Ce genre de code respecte la règle de la donnée "descendante". La donnée init
 > La donnée descend, les évènements remontent.
 
 Ce principe de donnée descendante a été popularisé par React, en réaction au "two-way data binding" qui était le standard avant React.
-La donnée "descandante" permet de clarifier le parcours des données au sein d'une application complexe. En React il est impossible de déroger à ce principe.
+La donnée "descendante" permet de clarifier le parcours des données au sein d'une application complexe. En React il est impossible de déroger à ce principe.
 
 En Svelte, il est généralement recommandé de suivre également ce principe.
 
@@ -32,7 +32,7 @@ Svelte propose une solution pour utiliser du "two-way data binding".
   let text = 'Du texte';
 </script>
 
-<input bind:value={text} />
+<input bind:value="{text}" />
 ```
 
 La valeur `value` est alors liée à la variable `text`. Si l'une change, l'autre sera mise à jour automatiquement.
@@ -53,7 +53,7 @@ Personnellement, j'essaie de ne m'en servir que pour les éléments de formulair
 
 ## Bindings de groupe
 
-Pour les inputs qui fonctionnent à plusieurs (radios, checkboxes), il faut utiliser un `bind:group`
+Pour les inputs qui fonctionnent à plusieurs (radios, checkboxes), il faut utiliser un `bind:group`.
 
 ```html
 <script>
@@ -62,15 +62,15 @@ Pour les inputs qui fonctionnent à plusieurs (radios, checkboxes), il faut util
 </script>
 
 <!-- Les inputs radio sont ainsi mutuellement exclusifs -->
-<input type="radio" bind:group={favorite} value="Rap" />
-<input type="radio" bind:group={favorite} value="Rock" />
-<input type="radio" bind:group={favorite} value="Classique" />
+<input type="radio" bind:group="{favorite}" value="Rap" />
+<input type="radio" bind:group="{favorite}" value="Rock" />
+<input type="radio" bind:group="{favorite}" value="Classique" />
 
 <!-- Les inputs checkbox s'ajoutent au sein d'un même tableau -->
-<input type="checkbox" bind:group={artists} value="John Lemon" />
-<input type="checkbox" bind:group={artists} value="Georges Bras-Pince" />
-<input type="checkbox" group={artists} value="Les Rollings Scones" />
-<input type="checkbox" bind:group={artists} value="Kanye Sud-Ouest" />
+<input type="checkbox" bind:group="{artists}" value="John Lemon" />
+<input type="checkbox" bind:group="{artists}" value="Georges Bras-Pince" />
+<input type="checkbox" group="{artists}" value="Les Rolling Scones" />
+<input type="checkbox" bind:group="{artists}" value="Kanye Sud-Ouest" />
 ```
 
 ## Binding de boucle
@@ -82,21 +82,18 @@ Les bindings fonctionnent également pour les boucles `{#each}`.
   let todos = [
     { done: false, text: 'faire des pâtes' },
     { done: false, text: 'jouer à Candy Crush' },
-    { done: false, text: 'devenir riche' }
+    { done: false, text: 'devenir riche' },
   ];
 
   $: remaining = todos.filter(t => !t.done).length;
 </script>
 
 {#each todos as todo}
-  <div class:done={todo.done}>
-    <input
-      type=checkbox
-      bind:checked={todo.done}
-    >
+<div class:done="{todo.done}">
+  <input type="checkbox" bind:checked="{todo.done}" />
 
-    <span>{todo.text}</span>
-  </div>
+  <span>{todo.text}</span>
+</div>
 {/each}
 ```
 
@@ -110,7 +107,7 @@ On peut accéder facilement aux dimensions d'un élément via des bindings de di
   let h;
 </script>
 
-<div bind:clientWidth={w} bind:clientHeight={h}>Coucou</div>
+<div bind:clientWidth="{w}" bind:clientHeight="{h}">Coucou</div>
 ```
 
 ## `this`
@@ -126,11 +123,10 @@ Dans ce cas, il faut utiliser un binding d'élément:
   let monElement;
 </script>
 
-<div bind:this={monElement}>Coucou</div>
+<div bind:this="{monElement}">Coucou</div>
 ```
 
 Alors, la variable `monElement` devient une référence vers l'élément HTML bindé.
-
 
 On peut également binder des instances de composants pour accéder directement à des valeurs que l'instance exporte.
 
@@ -158,4 +154,4 @@ On peut également binder des instances de composants pour accéder directement 
 <input bind:this={input} />
 ```
 
-## à suivre: [Exercices](./2-4_exos.md)
+## à suivre: [Exercices](./2-5_exos.md)

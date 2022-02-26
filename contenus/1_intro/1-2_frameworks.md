@@ -4,7 +4,7 @@ Svelte est un **framework de composants**.
 
 > Hey Michel, c'est quoi un framework de composants ?
 
-Un composant est une brique d'interface réplicable permettant d'afficher de la donnée de manière
+Un composant est une brique d'interface réplicable permettant d'afficher de la donnée de manière consistente.
 
 Un framework de composants orchestre la manière dont la donnée est distribuée au sein des composants.
 
@@ -22,9 +22,11 @@ Les principaux problèmes à régler sont:
 - le **parcours des données** au sein de l'application est complexe à orchestrer
 - les **performances d'exécution** de l'application sont difficiles à maitriser
 
+Pour répondre à ces problématiques, plusieurs frameworks ont émergé, mais les frameworks dits "de composants" sont devenus particulièrement populaires depuis le milieu des années 2010: Angular, React, Vue.
+
 ## Principes généraux
 
-Pour répondre à ces problématiques, un standard s'est formé autour de 3 principes.
+Ces 3 frameworks partagent un consensus, en grande partie inspiré par React, et largement répandu aujourd'hui. Ce consensus s'est formé autour de 3 principes.
 
 ### Architecture par composants
 
@@ -32,7 +34,7 @@ Pour répondre à ces problématiques, un standard s'est formé autour de 3 prin
 
 Ces briques unitaires (ou plutôt, moules unitaires) sont des composants, qui dépendent de 2 types de données: les **`props`** et le **`state`**.
 
-Les `props` sont fournies par le parent, et ne peuvent être modifiées par le composant. On les compare généralement à l'ADN.
+Les `props` sont fournies par le parent, et ne peuvent pas être modifiées par le composant. On les compare généralement à l'ADN.
 
 Le `state` est interne au composant, ne peut en sortir, et décrit l'expérience d'un composant.
 
@@ -46,7 +48,7 @@ Cette contrainte amène à la mise d'une boucle de rendu qui re-rend un composan
 
 ### [DOM virtuel](https://youtu.be/AdNJ3fydeao?t=251)
 
-À cause d la boucle de rendu, beaucoup de modifications de DOM sont à prévoir, puisque si un composant est re-rendu, tous ses enfants également. Et **manipuler le DOM coûte cher**, surtout si on le fait mal.
+À cause de la boucle de rendu, beaucoup de modifications de DOM sont à prévoir, puisque si un composant est re-rendu, tous ses enfants également. Et **manipuler le DOM coûte cher**, surtout si on le fait mal.
 
 React propose le concept de DOM virtuel pour réduire le nombre d'opérations sur le DOM: on construit en mémoire un "faux" DOM qui représente le vrai DOM. Dès qu'une modification de données est à venir, elle est d'abord appliquée sur le faux DOM.
 

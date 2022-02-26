@@ -1,10 +1,10 @@
 # Pourquoi Svelte existe ?
 
-Svelte a créé principalement par [Rich Harris](https://twitter.com/Rich_Harris), graphics editor au Guardian, puis au New York Times.
+Svelte a été créé principalement par [Rich Harris](https://twitter.com/Rich_Harris), graphics editor au Guardian, puis au New York Times, et depuis fin 2021 [employé par Vercel](https://vercel.com/blog/vercel-welcomes-rich-harris-creator-of-svelte) pour développer Svelte.
 
-Rich ayant beaucoup de data viz à produire, était souvent confronté à des problèmes de performances, malgré les optimisations proposées par les frameworks existants, notamment React.
+Rich ayant beaucoup de data viz à produire, il était souvent confronté à des problèmes de performances, malgré les optimisations proposées par les frameworks existants, notamment React.
 
-Il a donc créé son propre framework, Svelte, pour corriger les faiblesses de React, qui souvent sont partagées avec d'autres frameworks.
+Il a donc créé ses propres outils, [Ractive](https://ractive.js.org/), puis son propre framework, Svelte, pour corriger les faiblesses de React, qui souvent sont partagées avec d'autres frameworks.
 
 Mais il n'a pas non plus hésité à s'inspirer d'autres frameworks, notamment Vue.
 
@@ -21,11 +21,12 @@ Cela est pratique, mais regénère en permanence les composants, ce qui risque d
 
 #### React n'est pas **vraiment** réactif
 
-À cause de sa boucle de rendu, ainsi que du Virtual DOM. Cela suffit à donner le change dans plein de cas, mais bon, c'est nul parce que:
+À cause de sa boucle de rendu, ainsi que du Virtual DOM. Cela suffit à donner le change dans plein de cas, mais bon, c'est un peu nul parce que:
 
 - du code exécuté même quand c'est pas nécessaire
 - du temps perdu à comparer pleins d'éléments
-- des optimisations de performance possibles via opt-ins
+- des optimisations de performance possibles, mais il faut les activer explicitement
+- tout la logique de React est exécutée dans le navigateur, à runtime
 
 #### React pèse lourd
 
