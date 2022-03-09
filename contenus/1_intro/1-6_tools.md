@@ -20,11 +20,11 @@ npx degit sveltejs/template my-new-project
 
 ### Configurer VSCode
 
-Ajouter l'extension [Svelte for VSCode](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+1. Ajouter l'extension [Svelte for VSCode](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
 
-Vérifier que le formatteur par défault est bien `svelte.svelte-vscode`. Deux options:
+2. Vérifier que le formatteur par défault est bien `svelte.svelte-vscode`. Deux options:
 
-#### Command Palette
+_Via Command Palette_
 
 Dans VSCode => `Ctrl` + `Shift` + `P`
 
@@ -32,7 +32,7 @@ Dans VSCode => `Ctrl` + `Shift` + `P`
 => `Configure Default Formatter`
 => `Svelte`
 
-#### Dans les settings
+_Manuellement_
 
 Dans VSCode => `Ctrl` + `Shift` + `P`
 
@@ -45,5 +45,13 @@ Ajouter:
       "editor.defaultFormatter": "svelte.svelte-vscode"
   },
 ```
+
+3. Activer le formattage à la sauvegarde
+
+Ouvrir les préférences de VSCode (avec le menu tout en haut).
+
+Écrire `format on save` dans la barre de recherche, puis activer la checkbox "Format on Save".
+
+4. Maintenant, à chaque sauvegarde, votre fichier `.svelte` sera correctement formatté
 
 ## à suivre: [2 - Syntaxe] [Bases](../2_syntax/2-1_bases.md)
