@@ -41,6 +41,22 @@ Selon vos préférences de formattage, l'ordre peut être différent.
 
 **Les `<style>` sont scopés par défaut !!** Ce qui signifie que les styles définis dans un fichier de composant ne s'appliqueront que pour le HTML de ce composant.
 
+Pour rendre vos styles globaux, il est possible d'utiliser `:global()`:
+
+```html
+<style>
+  /* S'applique à tous les p de l'application */
+  :global(p) {
+    color: blue;
+  }
+
+  /* S'applique à tous les button dans les .myClass de l'application */
+  .myClass :global(button) {
+    background: red;
+  }
+</style>
+```
+
 ## Expressions
 
 La syntaxe Svelte étant un superset du HTML, elle l'enrichit. À la manière du JSX, on peut écrire des expressions JS dans le HTML.
