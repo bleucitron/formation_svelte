@@ -143,7 +143,7 @@ Les transitions disponibles par défaut sont:
 
 ## Transitions personnalisées
 
-Si les différentes transitions disponibles ne suffisent pas, il est possible de définir ses propres transitions personnalisées, soit via du [CSS pur](https://svelte.dev/tutorial/custom-css-transitions), soit du [JS]()https://svelte.dev/tutorial/custom-js-transitions.
+Si les différentes transitions disponibles ne suffisent pas, il est possible de définir ses propres transitions personnalisées, soit via du [CSS pur](https://svelte.dev/tutorial/custom-css-transitions), soit du [JS](https://svelte.dev/tutorial/custom-js-transitions).
 
 Cet sujet sort du cadre de ce cours.
 
