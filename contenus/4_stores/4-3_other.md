@@ -73,7 +73,6 @@ count.reset();
 - Créer un custom store qui expose des méthodes pour
   - mettre en majuscules
   - mettre en minuscules
-  - mettre en SnakeCase
   - supprimer le contenu
 
 et utiliser ce store avec un `<input>` pour changer le texte, et des `<button>` pour utiliser les méthodes.
