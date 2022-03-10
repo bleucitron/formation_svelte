@@ -141,4 +141,10 @@ Les transitions disponibles par défaut sont:
 - [`draw`](https://svelte.dev/docs#draw)
 - [`crossfade`](https://svelte.dev/docs#crossfade)
 
-## à suivre: [Transitions custom](./5-2_custom.md)
+## Transitions personnalisées
+
+Si les différentes transitions disponibles ne suffisent pas, il est possible de définir ses propres transitions personnalisées, soit via du [CSS pur](https://svelte.dev/tutorial/custom-css-transitions), soit du [JS]()https://svelte.dev/tutorial/custom-js-transitions.
+
+Cet sujet sort du cadre de ce cours.
+
+## à suivre: [Divers](./5-2_misc.md)

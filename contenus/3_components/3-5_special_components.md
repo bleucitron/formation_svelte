@@ -97,7 +97,9 @@ Permet de fournir au compilateur des options spécifiques au composant.
 
 Afficher un système de fichiers en utilisant `<svelte:self>` et `<svelte:component>`.
 
-Créer un composant différent pour chaque extension de fichier.
+- à chaque étage, un objet est un dossier, le reste sont des fichiers
+- on peut différencier les objets avec `typeof x === 'object'`
+- Créer un composant différent pour chaque extension de fichier
 
 ```js
 const files = {
@@ -117,11 +119,11 @@ const files = {
     },
   },
   images: {
-    'image01.jpg': 'image01.jpg',
-    'image02.gif': 'image02.gif',
-    'image03.jpg': 'image03.jpg',
-    'image04.png': 'image04.png',
-    'image05.jpg': 'image05.jpg',
+    'image01.jpg': 'image de chien',
+    'image02.gif': 'gif de chat',
+    'image03.jpg': 'image de cheval',
+    'image04.png': 'image de carotte',
+    'image05.jpg': 'image de jacuzzi',
   },
 };
 ```

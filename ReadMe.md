@@ -42,7 +42,7 @@
 
 ### [Module context](./contenus/3_components/3-4_context_module.md)
 
-### [Special components](./contenus/3_components/3-5_special.md)
+### [Special components](./contenus/3_components/3-5_special_components.md)
 
 (Début du projet fil-rouge)
 
@@ -58,9 +58,7 @@
 
 ### [Transitions](./contenus/5_visual/5-1_transitions.md)
 
-### [Transitions custom](./contenus/5_visual/5-2_custom.md)
-
-### [Divers](./contenus/5_visual/5-3_misc.md)
+### [Divers](./contenus/5_visual/5-2_misc.md)
 
 ## 6) SvelteKit
 
