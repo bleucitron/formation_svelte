@@ -158,7 +158,43 @@ Créer un composant Slider qui prend en props un tableau et affiche les détails
 Le tableau de données peut représenter des objets culturels différents (films, chansons, livres), et donc est générique. Ce qui signifie que Slider ne sait pas à l'avance le type de données qu'on lui fournit, et ne doit pas s'en soucier.
 
 - le Slider n'affiche toujours qu'un seul élément à la fois (la fiche d'un film, ou d'un livre)
-- le Slider permet de passer au film suivant ou précédent via des boutons.
+- le Slider permet de passer au film/livre/chanson suivante ou précédente via des boutons.
 - le Slider doit être complètement agnostique du type de données qu'on lui fournit
+- Prévoir un composant pour chaque type (film, livre, chanson)
+
+```js
+const items = [
+  {
+    name: 'Harry Potter',
+    director: 'Alfonso Cuaron',
+    type: 'movie',
+  },
+  {
+    name: 'Harry Potter',
+    author: 'JK Rowling',
+    type: 'book',
+  },
+  {
+    name: 'Star Wars',
+    director: 'Georges Lucas',
+    type: 'movie',
+  },
+  {
+    name: 'Hey Jude',
+    band: 'The Beatles',
+    type: 'song',
+  },
+  {
+    name: 'La bamba',
+    band: 'Les Gipsy Kings',
+    type: 'song',
+  },
+  {
+    name: 'Les fleurs du mal',
+    author: 'Charles Baudelaire',
+    type: 'book',
+  },
+];
+```
 
 ## à suivre: [Le contexte module](./3-4_context_module.md)
