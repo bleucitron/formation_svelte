@@ -117,7 +117,7 @@ Si l'on veut faire des opérations spécifiques immédiatement après une mise �
 
 `tick` renvoie une promesse qui résoud dès que toutes les mises à jour en attente sont appliquées.
 
-```html
+```svelte
 <script>
   import { tick } from 'svelte';
 
@@ -132,8 +132,8 @@ Si l'on veut faire des opérations spécifiques immédiatement après une mise �
   }
 </script>
 
-<div bind:this="{div}">{value}</div>
-<button on:click="{update}">Click</button>
+<div bind:this={div}>{value}</div>
+<button on:click={update}>Click</button>
 ```
 
 ## Partage de cycle de vie
@@ -155,7 +155,7 @@ export default function () {
 }
 ```
 
-```html
+```svelte
 <script>
   import setLifecycle from './utils.js';
 

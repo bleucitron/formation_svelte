@@ -2,10 +2,10 @@
 
 On a vu que l'on pouvait déclarer des listeners de cette façon.
 
-```html
-<div on:click="{clickHandler}" />
-<div on:mousemove="{moveHandler}" />
-<div on:scroll="{scrollHandler}" />
+```svelte
+<div on:click={clickHandler} />
+<div on:mousemove={moveHandler} />
+<div on:scroll={scrollHandler} />
 
 <!-- Inline handlers -->
 <div on:click={() => console.log("click")} />
@@ -15,14 +15,16 @@ On a vu que l'on pouvait déclarer des listeners de cette façon.
 
 Svelte propose des raccourcis pour gérer certains cas.
 
-```html
-<div on:click={e => { e.stopPropagation(); console.log('click'); }} /> <div
-on:click|stopPropagation={() => console.log('click')}/>
+```svelte
+<div on:click={e => {
+  e.stopPropagation(); console.log('click');
+}} />
+<div on:click|stopPropagation={() => console.log('click')} />
 ```
 
 Les cas possibles sont:
 
-```html
+```svelte
 <div on:click|stopPropagation />
 <div on:click|preventDefault />
 <div on:click|trusted />
@@ -34,7 +36,7 @@ Les cas possibles sont:
 
 Il est possible de chainer les modificateurs:
 
-```html
+```svelte
 <div on:click|once|stopPropagation|preventDefault />
 ```
 
@@ -42,7 +44,7 @@ Il est possible de chainer les modificateurs:
 
 Il est possible de générer des évènements de composants via `createEventDispatcher`.
 
-```html
+```svelte
 <!-- Coucou.svelte -->
 <script>
   import { createEventDispatcher } from 'svelte';
@@ -63,7 +65,7 @@ Dans ce cas, un évènement personnalisé est généré, et peut être écouté 
 
 La donnée éventuellement fournie lors du `dispatch` est disponible dans le `e.detail`.
 
-```html
+```svelte
 <!-- index.svelte -->
 <script>
   import Coucou from './Coucou.svelte';
@@ -90,7 +92,7 @@ Sur plusieurs étages, ça rajoute du boilerplate, c'est un peu pénible à écr
 
 Svelte propose une syntaxe pour simplifier le relais: **le relais d'évènements**, qui pour le coup fait réellement remonter les évènements, plutôt que descendre des callbacks.
 
-```html
+```svelte
 <!-- Supposons une architecture imbriquée dans plusieurs fichiers -->
 <Parent on:message />
 <Enfant on:message />

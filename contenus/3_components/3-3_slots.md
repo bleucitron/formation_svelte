@@ -109,7 +109,7 @@ Supposons le cas suivant:
   ];
 </script>
 
-<List items="{characters}"></List>
+<List items={characters}></List>
 ```
 
 Notre composant `List` contient un `{#each}`. Nous voulons être capables d'instancier des `Hero` ou des `Villain` dans notre liste, mais sans que `<List>` n'ait à vérifier le type de chaque personnage. C'est important car nous voulons garder le composant `<List>` le plus générique possible.
@@ -124,11 +124,11 @@ On peut résoudre ce problème en utilisant les `slot props`.
 
 ```svelte
 <!-- index.svelte -->
-<List items="{characters}" let:item>
+<List items={characters} let:item>
   {#if item.type === 'hero'}
-  <Hero name="{item.name}" />
+  <Hero name={item.name} />
   {:else}
-  <Villain name="{item.name}" />
+  <Villain name={item.name} />
   {/if}
 </List>
 ```
@@ -140,7 +140,7 @@ On peut résoudre ce problème en utilisant les `slot props`.
 </script>
 
 {#each items as item}
-<slot item="{item}"> {item.name} </slot>
+<slot item={item}> {item.name} </slot>
 {/each}
 ```
 

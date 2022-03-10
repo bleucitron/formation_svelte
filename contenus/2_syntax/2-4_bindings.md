@@ -2,7 +2,7 @@
 
 Prenons le cas simple de la modification d'un `<input>`:
 
-```html
+```svelte
 <script>
   let text = 'Du texte';
 
@@ -11,7 +11,7 @@ Prenons le cas simple de la modification d'un `<input>`:
   }
 </script>
 
-<input value="{text}" on:input="{setText}" />
+<input value={text} on:input={setText} />
 ```
 
 Ce genre de code respecte la règle de la donnée "descendante". La donnée initiale de `text` est fournie par le parent à `<input>`. Lorsque l'évènement `input` se déclenche sur `<input>`, on exécute `setText` qui va modifier la value de `text`, qui est redescendue comme valeur de `<input>`.
@@ -27,19 +27,19 @@ Mais dans certains cas, notamment celui présenté juste au-dessus, le flux de d
 
 Svelte propose une solution pour utiliser du "two-way data binding".
 
-```html
+```svelte
 <script>
   let text = 'Du texte';
 </script>
 
-<input bind:value="{text}" />
+<input bind:value={text} />
 ```
 
 La valeur `value` est alors liée à la variable `text`. Si l'une change, l'autre sera mise à jour automatiquement.
 
 Il y a un raccourci de syntaxe lorsque la variable a la même nom que la prop.
 
-```html
+```svelte
 <script>
   let value = 'Du texte';
 </script>
@@ -55,29 +55,29 @@ Personnellement, j'essaie de ne m'en servir que pour les éléments de formulair
 
 Pour les inputs qui fonctionnent à plusieurs (radios, checkboxes), il faut utiliser un `bind:group`.
 
-```html
+```svelte
 <script>
   let favoriteMusic = 'Rap';
   let artists = [];
 </script>
 
 <!-- Les inputs radio sont ainsi mutuellement exclusifs -->
-<input type="radio" bind:group="{favorite}" value="Rap" />
-<input type="radio" bind:group="{favorite}" value="Rock" />
-<input type="radio" bind:group="{favorite}" value="Classique" />
+<input type="radio" bind:group={favorite} value="Rap" />
+<input type="radio" bind:group={favorite} value="Rock" />
+<input type="radio" bind:group={favorite} value="Classique" />
 
 <!-- Les inputs checkbox s'ajoutent au sein d'un même tableau -->
-<input type="checkbox" bind:group="{artists}" value="John Lemon" />
-<input type="checkbox" bind:group="{artists}" value="Georges Bras-Pince" />
-<input type="checkbox" group="{artists}" value="Les Rolling Scones" />
-<input type="checkbox" bind:group="{artists}" value="Kanye Sud-Ouest" />
+<input type="checkbox" bind:group={artists} value="John Lemon" />
+<input type="checkbox" bind:group={artists} value="Georges Bras-Pince" />
+<input type="checkbox" group={artists} value="Les Rolling Scones" />
+<input type="checkbox" bind:group={artists} value="Kanye Sud-Ouest" />
 ```
 
 ## Binding de boucle
 
 Les bindings fonctionnent également pour les boucles `{#each}`.
 
-```html
+```svelte
 <script>
   let todos = [
     { done: false, text: 'faire des pâtes' },
@@ -89,8 +89,8 @@ Les bindings fonctionnent également pour les boucles `{#each}`.
 </script>
 
 {#each todos as todo}
-<div class:done="{todo.done}">
-  <input type="checkbox" bind:checked="{todo.done}" />
+<div class:done={todo.done}>
+  <input type="checkbox" bind:checked={todo.done} />
 
   <span>{todo.text}</span>
 </div>
@@ -101,13 +101,13 @@ Les bindings fonctionnent également pour les boucles `{#each}`.
 
 On peut accéder facilement aux dimensions d'un élément via des bindings de dimensions: `clientWidth`, `clientHeight`, `offsetWidth` et `offsetHeight`.
 
-```html
+```svelte
 <script>
   let w;
   let h;
 </script>
 
-<div bind:clientWidth="{w}" bind:clientHeight="{h}">Coucou</div>
+<div bind:clientWidth={w} bind:clientHeight={h}>Coucou</div>
 ```
 
 ## `this`
@@ -118,19 +118,19 @@ Mais il peut être intéressant, voire nécessaire, d'accéder à certains élé
 
 Dans ce cas, il faut utiliser un binding d'élément:
 
-```html
+```svelte
 <script>
   let monElement;
 </script>
 
-<div bind:this="{monElement}">Coucou</div>
+<div bind:this={monElement}>Coucou</div>
 ```
 
 Alors, la variable `monElement` devient une référence vers l'élément HTML bindé.
 
 On peut également binder des instances de composants pour accéder directement à des valeurs que l'instance exporte.
 
-```html
+```svelte
 <!-- Parent.svelte -->
 <script>
   import InputField from './InputField.svelte';

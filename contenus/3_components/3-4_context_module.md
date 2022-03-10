@@ -2,7 +2,7 @@
 
 On peut ajouter un `<script>` special à nos composants.
 
-```html
+```svelte
 <script context="module">
   // partagé entre toutes les instances
 </script>
@@ -25,13 +25,13 @@ Les `<script context='module'>` permettent également d'exporter du code à l'ex
 
 Ces exports fonctionnent comme des `export` classiques. La seule différence est que l'on ne peut pas exporter par défaut, car l'export par défaut d'un `.svelte` est le composant lui-même.
 
-```html
+```svelte
 <script context="module">
   export function maFonction() {}
 </script>
 ```
 
-```html
+```svelte
 <script>
   import Enfant, { maFonction } from './Enfant.svelte';
 </script>
