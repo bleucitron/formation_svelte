@@ -28,7 +28,7 @@ count.update(value => value + 1); // je veux incrémenter la valeur actuelle
 
 Voici un exemple simple d'usage dans un composant:
 
-```html
+```svelte
 <script>
   import { onDestroy } from 'svelte';
   import { count } from './stores.js';
@@ -50,8 +50,8 @@ Voici un exemple simple d'usage dans un composant:
 </script>
 
 <h1>The count is {count_value}</h1>
-<button on:click="{increment}">+</button>
-<button on:click="{reset}">Reset</button>
+<button on:click={increment}>+</button>
+<button on:click={reset}>Reset</button>
 ```
 
 Dans cet exemple, on s'abonne au store via `.subscribe`. La fonction que l'on passe à `subscribe` est exécutée à chaque fois que la valeur du store change, et permet de garder `count_value` en phase avec la valeur du store.
@@ -66,9 +66,8 @@ Utiliser un store dans un composant revient grosso modo à s'abonner, se désabo
 
 **Écrire `$count` dans un composant, permet de s'abonner automatiquement au store, et d'accéder et modifier à sa valeur courante en permanence**. De plus, le désabonnement est automatique.
 
-```html
+```svelte
 <script>
-  import { onDestroy } from 'svelte';
   import { count } from './stores.js';
 
   function increment() {
@@ -80,8 +79,8 @@ Utiliser un store dans un composant revient grosso modo à s'abonner, se désabo
 </script>
 
 <h1>The count is {$count}</h1>
-<button on:click="{increment}">+</button>
-<button on:click="{reset}">Reset</button>
+<button on:click={increment}>+</button>
+<button on:click={reset}>Reset</button>
 ```
 
 `count` représente le store, `$count` représente sa valeur courante.
