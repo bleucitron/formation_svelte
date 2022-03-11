@@ -1,6 +1,6 @@
-# [Builds et déploiements](https://kit.svelte.dev/docs#modules)
+# [Builds et déploiements](https://kit.svelte.dev/docs/modules)
 
-## [SSR et hydratation](https://kit.svelte.dev/docs#ssr-and-javascript)
+## [SSR et hydratation](https://kit.svelte.dev/docs/appendix)
 
 Par défault, toutes les pages d'une application SvelteKit utilisent
 
@@ -30,13 +30,13 @@ Si je veux **générer une page au moment du build**, et donc la rendre **statiq
 
 Si je veux **désactiver le SSR**, et donc rendre ma page équivalente à une SPA, [c'est un peu particulier](https://kit.svelte.dev/docs/hooks#handle), et nous ne le traiterons pas ici.
 
-## [Configuration](https://kit.svelte.dev/docs#configuration)
+## [Configuration](https://kit.svelte.dev/docs/configuration)
 
 **Il est également possible de modifier le comportement de SvelteKit pour l'intégralité de votre app**, en utilisant [les configurations d'app SvelteKit](https://kit.svelte.dev/docs#configuration).
 
 Cette configuration se modifie dans le fichier `svelte.config.js`.
 
-## [CLI](https://kit.svelte.dev/docs#command-line-interface)
+## [CLI](https://kit.svelte.dev/docs/cli)
 
 SvelteKit propose quelques options de CLI:
 

@@ -22,7 +22,7 @@ Il est possible d'utiliser tout plein de préprocesseurs avec Svelte et SvelteKi
 
 Plusieurs librairies externes vous permettent de faire:
 
-- des tests unitaires avec [Testing Librairy](https://testing-library.com/docs/svelte-testing-library/intro/)
+- des tests unitaires avec [Testing Library](https://testing-library.com/docs/svelte-testing-library/intro/)
 - des tests visuels avec [Storybook](https://storybook.js.org/blog/storybook-for-svelte/)
 - des tests e2e avec [Cypress](https://www.cypress.io/)
 

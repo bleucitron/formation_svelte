@@ -72,6 +72,6 @@
 
 ### [Modules](./contenus/6_svelte-kit/6-5_modules.md)
 
-### [Builds et déploiements](./contenus/6_svelte-kit/6-6-build_and_deploy.md)
+### [Builds et déploiements](./contenus/6_svelte-kit/6-6_build_and_deploy.md)
 
 ## 7) [Aller plus loin](./contenus/7_beyond/7-1_index.md)
