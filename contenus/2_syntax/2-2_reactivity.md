@@ -116,4 +116,6 @@ Il est aussi possible de déclarer des blocks réactifs. Le block est réévalu�
 <button on:click={() => prixBanane += 2}>Monter le prix de la banane</button>
 ```
 
+---
+
 ## à suivre: [Blocks de compilation](./2-3_blocks.md)

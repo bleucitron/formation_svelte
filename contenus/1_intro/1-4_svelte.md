@@ -108,10 +108,12 @@ Mais grandissante.
 
 La contrepartie à ne pas embarquer de code de moteur de rendu, est que le code compilé de chaque composant Svelte est un petit peu plus gros que son équivalent React.
 
-Pour de grosses applications, il y aurait donc un point d'inflexion au delà duquel le bundle Svelte serait plus gros que celui de React, ce qui contredit un de ses principaux arguments.
+Pour de grosses applications, il y aurait donc [un point d'inflexion](https://github.com/halfnelson/svelte-it-will-scale#calculating-the-inflection-point) au delà duquel le bundle Svelte serait plus gros que celui de React, ce qui contredit un de ses principaux arguments.
 
 Ce point est estimé à entre 120kb et 140kb de code source. C'est tout à fait atteignable pour une application SPA, mais en pratique cela ne pose pas vraiment de souci pour une application sur plusieurs pages associée à du code splitting et du SSR, qui sont les nouveaux standards de l'industrie.
 
 [GRAPHIQUES SUR LA TAILLE DES BUNDLE]
+
+---
 
 ## à suivre: [Liens utiles](./1-5_links.md)

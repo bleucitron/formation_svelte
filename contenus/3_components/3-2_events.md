@@ -101,4 +101,6 @@ Svelte propose une syntaxe pour simplifier le relais: **le relais d'évènements
 
 Cela fonctionne aussi bien pour les évènements de composants que pour les évènements de composants.
 
+---
+
 ## à suivre: [Composition](./3-3_slots.md)

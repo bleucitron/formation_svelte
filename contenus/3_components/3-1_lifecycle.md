@@ -1,6 +1,6 @@
 # Cycle de vie
 
-À partir de maintenant, les exercices seront faits dans le dossier `project`. N'oubliez pas d'[installer Svelte]('../1_intro/1-6_tools.md).
+À partir de maintenant, les exercices seront faits dans le dossier `project`. N'oubliez pas d'[installer Svelte](../1_intro/1-6_tools.md).
 
 ## Rappels
 
@@ -163,9 +163,13 @@ export default function () {
 </script>
 ```
 
+---
+
 ## Exos
 
 - afficher une horloge lorsqu'on clique sur un bouton, et l'enlever en recliquant dessus
 - afficher le premier tweet de https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json
+
+---
 
 ## à suivre: [Évènements](./3-2_events.md)

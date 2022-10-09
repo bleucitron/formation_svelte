@@ -8,27 +8,7 @@ Par défault, toutes les pages d'une application SvelteKit utilisent
 - le router client
 - l'hydratation JS
 
-Il est possible de modifier ce comportement pour les pages qui vous arrangent.
-
-Si je veux **désactiver le router**, pour que la navigation normalement:
-
-```js
-<script context="module">export const router = false;</script>
-```
-
-Si je veux **désactiver l'hydratation**, pour ne plus avoir de javascript qui tourne sur ma page:
-
-```js
-<script context="module">export const hydrate = false;</script>
-```
-
-Si je veux **générer une page au moment du build**, et donc la rendre **statique**:
-
-```js
-<script context="module">export const prerender = true;</script>
-```
-
-Si je veux **désactiver le SSR**, et donc rendre ma page équivalente à une SPA, [c'est un peu particulier](https://kit.svelte.dev/docs/hooks#handle), et nous ne le traiterons pas ici.
+Il est possible de modifier ce comportement pour les pages qui vous arrangent, via les [options de page](https://kit.svelte.dev/docs/page-options).
 
 ## [Configuration](https://kit.svelte.dev/docs/configuration)
 
@@ -41,10 +21,9 @@ Cette configuration se modifie dans le fichier `svelte.config.js`.
 SvelteKit propose quelques options de CLI:
 
 ```bash
-svelte-kit dev # lance le serveur de dev
-svelte-kit build # build l'app pour la prod
-svelte-kit preview # une fois l'app buildée, permet de previsualiser l'app en local
-svelte-kit package # pour faire de votre app une librairie
+vite dev # lance le serveur de dev
+vite build # build l'app pour la prod
+vite preview # une fois l'app buildée, permet de previsualiser l'app en local
 ```
 
 ## [Adapters](https://kit.svelte.dev/docs/adapters)
@@ -90,8 +69,12 @@ export default {
 };
 ```
 
+---
+
 ## Exos
 
 - déployer l'app sur Vercel
 
-## à suivre: [Aller plus loin](../7_beyond/7-1_index.md)
+---
+
+## à suivre: [Aller plus loin](../beyond.md)

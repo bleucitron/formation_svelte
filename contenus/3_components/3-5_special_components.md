@@ -64,4 +64,6 @@ Il existe d'autres composants spéciaux, qui relèvent plus d'un cours avancé.
 - [`<svelte:component>`](https://svelte.dev/docs#template-syntax-svelte-component)
 - [`<svelte:options>`](https://svelte.dev/docs#template-syntax-svelte-options)
 
-## à suivre: [4 - Stores] [Concept](../4_stores/4-1_concept.md)
+---
+
+## à suivre: [Stores](../4_stores/index.md)

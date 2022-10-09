@@ -87,4 +87,7 @@ Utiliser un store dans un composant revient grosso modo à s'abonner, se désabo
 
 **La syntaxe `$count` n'est disponible que dans un composant `.svelte`**, pas dans un fichier `.js`.
 
+
+---
+
 ## à suivre: [Autres stores](../4_stores/4-3_other.md)

@@ -7,7 +7,7 @@ Parmi ces meta-frameworks, on retrouve:
 - [Next](https://nextjs.org/), pour React
 - [Gatsby](https://www.gatsbyjs.com/), pour React
 - [Nuxt](https://nuxtjs.org/), pour Vue
-- [Sapper](https://sapper.svelte.dev/), pour Svelte
+- [SvelteKit](https://kit.svelte.dev/), pour Svelte
 - [Astro](https://astro.build/blog/introducing-astro/), carrément agnostique
 - et pleins d'autres...
 
@@ -81,13 +81,13 @@ Tout s'est débloqué avec le déploiement du standard `import`/`export` dans le
 
 SvelteKit a choisi Vite comme bundler de développement par défaut.
 
-## Installer SvelteKit
+## [Installer SvelteKit](https://kit.svelte.dev/docs/introduction#getting-started)
 
 ```bash
-npm init svelte@next app
-cd app
+npm create svelte@latest my-app
+cd my-app
 npm install # installe les dépendances
-npm run dev # lance un serveur de developpement
+npm run dev -- --open # lance le serveur de développement
 ```
 
-## à suivre: [Routing](./6-2_routing.md)
+## à suivre: [Structure d'un projet](./6-2_structure.md)

@@ -44,4 +44,6 @@ De plus, cela rend les choses plus dures à apprendre.
 
 **Supprimer tout le code inutile.**
 
+---
+
 ## à suivre: [Mais c'est quoi Svelte ?](./1-4_svelte.md)

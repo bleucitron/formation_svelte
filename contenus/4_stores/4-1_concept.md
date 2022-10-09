@@ -46,12 +46,14 @@ Dès lors qu'un composant est connecté à un store, il devient dépendant du st
 
 Un composant non générique est plus difficilement réutilisable, et plus difficilement testable.
 
----
+## Librairies externes
 
 Redux, MobX, VueX, ... sont donc des librairies qui proposent des stores connectables à n'importe quelle application.
 
 Néanmoins, ces solutions ont une certaine courbe d'apprentissage, sont souvent complexes à mettre en place, et ajoutent une bonne dose de boilerplate. Je pense notamment à Redux.
 
 Svelte a la particularité de proposer des stores parfaitement intégrés au framework, qui tirent profit du concept de réactivité de Svelte, et sont d'une grande simplicité d'utilisation.
+
+---
 
 ## à suivre: [Le store `writable`](../4_stores/4-2_writable.md)

@@ -40,4 +40,6 @@
 
 [Yes but does it scale ? issue](https://github.com/sveltejs/svelte/issues/2546)
 
+---
+
 ## à suivre: [Outillage basique](./1-6_tools.md)

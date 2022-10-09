@@ -184,4 +184,6 @@ Si l'on définit pas de valeur par défaut à une `prop`, et qu'on l'intancie un
 <Profile taille="{180}" />
 ```
 
+---
+
 ## à suivre: [Réactivité](./2-2_reactivity.md)

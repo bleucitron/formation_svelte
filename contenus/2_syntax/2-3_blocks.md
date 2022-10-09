@@ -138,4 +138,6 @@ On peut intégrer du HTML pur avec `{@html}`
 
 **Attention**: dans ce cas, la string n'est pas nettoyée par Svelte.
 
+---
+
 ## à suivre: [Bindings](./2-4_bindings.md)

@@ -28,10 +28,18 @@ Plusieurs librairies externes vous permettent de faire:
 
 ## avec SvelteKit
 
-### [Endpoints](https://kit.svelte.dev/docs/routing#endpoints)
+### [Actions](https://kit.svelte.dev/docs/form-actions)
 
-Le serveur SvelteKit peut servir de relais à vos requêtes, via les [endpoints SvelteKit](https://kit.svelte.dev/docs/routing#endpoints).
+Permet de travailler efficacement avec les formulaires.
+
+### [Endpoints](https://kit.svelte.dev/docs/routing#server)
+
+Le serveur SvelteKit peut servir de relais à vos requêtes, via les [endpoints SvelteKit](https://kit.svelte.dev/docs/routing#server).
 
 ### [Hooks](https://kit.svelte.dev/docs/hooks)
 
-Apprenez-en plus sur les [hooks SvelteKit](https://kit.svelte.dev/docs#hooks).
+Apprenez-en plus sur les [hooks SvelteKit](https://kit.svelte.dev/docs/hooks).
+
+### [Avec Typescript](https://kit.svelte.dev/docs/types)
+
+Il est possible d'utiliser SvelteKit avec Typescript.

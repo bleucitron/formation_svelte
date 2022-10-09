@@ -56,4 +56,6 @@ Cette opération est bien moins coûteuse que de toucher au vrai DOM. Puis on co
 
 Le virtual DOM a permis de gagner en performances par rapport aux méthodes existantes jusque là, et a été adopté par plusieurs autres frameworks depuis (dont Vue).
 
+---
+
 ## à suivre: [Pourquoi Svelte ?](./1-3_why_svelte.md)

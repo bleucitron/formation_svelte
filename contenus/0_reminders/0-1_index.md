@@ -122,4 +122,4 @@ import monDefaut, { a, b } from 'mon-module';
 export default function () {}
 ```
 
-## à suivre: [1 - Intro] [Un peu d'histoire](../1_intro/1-1_history.md)
+## à suivre: [Introduction](../1_intro/index.md)

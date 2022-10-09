@@ -20,7 +20,7 @@
 
 (REPL)
 
-### [Syntaxe de base](./contenus/2_syntax/2-1_bases.md)
+### [Syntaxe de base](./contenus/2_syntax/2-1_basics.md)
 
 ### [Réactivité](./contenus/2_syntax/2-2_reactivity.md)
 
@@ -64,14 +64,16 @@
 
 ### [Présentation](./contenus/6_svelte-kit/6-1_intro.md)
 
-### [Routing](./contenus/6_svelte-kit/6-2_routing.md)
+### [Structure](./contenus/6_svelte-kit/6-2_structure.md)
 
-### [Layouts](./contenus/6_svelte-kit/6-3_layouts.md)
+### [Routing](./contenus/6_svelte-kit/6-3_routing.md)
 
-### [Loading](./contenus/6_svelte-kit/6-4_loading.md)
+### [Layouts](./contenus/6_svelte-kit/6-4_layouts.md)
 
-### [Modules](./contenus/6_svelte-kit/6-5_modules.md)
+### [Loading](./contenus/6_svelte-kit/6-5_loading.md)
 
-### [Builds et déploiements](./contenus/6_svelte-kit/6-6_build_and_deploy.md)
+### [Modules](./contenus/6_svelte-kit/6-6_modules.md)
 
-## 7) [Aller plus loin](./contenus/7_beyond/7-1_index.md)
+### [Builds et déploiements](./contenus/6_svelte-kit/6-7_build_and_deploy.md)
+
+## 7) [Aller plus loin](./contenus/beyond.md)

@@ -112,4 +112,4 @@ Une fonction de lissage détermine le profil d'évolution d'une valeur au cours 
 
 Pour mieux se rendre compte de ce à quoi ça ressemble, il suffit d'aller voir [ici](https://svelte.dev/examples/easing).
 
-## à suivre: [6 - SvelteKit] [C'est quoi ?](../6_svelte-kit/6-1_intro.md)
+## à suivre: [SvelteKit](../6_svelte-kit/index.md)

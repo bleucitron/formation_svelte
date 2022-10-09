@@ -66,4 +66,6 @@ const persons = [
 ];
 ```
 
-## à suivre: [3 - Composants] [Cycle de vie](../3_components/3-1_lifecycle.md)
+---
+
+## à suivre: [Composants](../3_components/index.md)

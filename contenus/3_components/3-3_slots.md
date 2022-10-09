@@ -151,6 +151,8 @@ Bien sûr,
 - on peut déstructurer `let:item={{type, name}}`
 - on peut écrire `{item}` à la place de `item={item}`
 
+---
+
 ## Exos
 
 Créer un composant Slider qui prend en props un tableau et affiche les détails de chaque élément.
@@ -196,5 +198,7 @@ const items = [
   },
 ];
 ```
+
+---
 
 ## à suivre: [Le contexte module](./3-4_context_module.md)

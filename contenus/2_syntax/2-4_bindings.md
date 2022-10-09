@@ -154,4 +154,6 @@ On peut également binder des instances de composants pour accéder directement 
 <input bind:this={input} />
 ```
 
+---
+
 ## à suivre: [Exercices](./2-5_exos.md)

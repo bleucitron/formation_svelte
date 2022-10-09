@@ -54,4 +54,6 @@ Ouvrir les préférences de VSCode (avec le menu tout en haut).
 
 4. Maintenant, à chaque sauvegarde, votre fichier `.svelte` sera correctement formatté
 
+---
+
 ## à suivre: [2 - Syntaxe] [Bases](../2_syntax/2-1_bases.md)

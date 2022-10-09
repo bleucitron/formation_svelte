@@ -66,6 +66,8 @@ count.decrement();
 count.reset();
 ```
 
+---
+
 ## Exos
 
 - Créer un store `readable` qui compte le temps en secondes depuis l'ouverture de la page, et afficher la valeur à l'écran
@@ -77,4 +79,6 @@ count.reset();
 
 et utiliser ce store avec un `<input>` pour changer le texte, et des `<button>` pour utiliser les méthodes.
 
-## à suivre: [5 - Visual] [Transitions](../5_visual/5-1_transitions.md)
+---
+
+## à suivre: [Effets visuels](../5_visual/index.md)
