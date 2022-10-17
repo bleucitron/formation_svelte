@@ -59,4 +59,4 @@ Ouvrir les préférences de VSCode (avec le menu tout en haut).
 
 ---
 
-## à suivre: [2 - Syntaxe] [Bases](../2_syntax/2-1_bases.md)
+## à suivre: [Syntaxe](../2_syntax/index.md)

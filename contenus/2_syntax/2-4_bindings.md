@@ -116,11 +116,13 @@ En Svelte comme dans les autres frameworks, on ne manipule pas directement les �
 
 Mais il peut être intéressant, voire nécessaire, d'accéder à certains éléments HTML, par exemple pour faire des calculs précis de positionnement.
 
+> Utiliser les bindings d'éléments HTML avec parcimonie.
+
 Dans ce cas, il faut utiliser un binding d'élément:
 
 ```svelte
 <script>
-  let monElement;
+  let monElement; // va référencer l'élément HTML qui lui sera bindé
 </script>
 
 <div bind:this={monElement}>Coucou</div>
@@ -128,31 +130,22 @@ Dans ce cas, il faut utiliser un binding d'élément:
 
 Alors, la variable `monElement` devient une référence vers l'élément HTML bindé.
 
-On peut également binder des instances de composants pour accéder directement à des valeurs que l'instance exporte.
+Cela peut notamment servir pour faire des calculs de position, de dimensions, ou pour accéder aux méthodes des éléments HTML.
 
-```svelte
-<!-- Parent.svelte -->
+```html
 <script>
-  import InputField from './InputField.svelte';
-
-  let field;
-</script>
-
-<InputField bind:this={field}/> <!-- field est une référence vers cette instance de InputField -->
-
-<button on:click={() => field.focus()}>Focus field</button> <!-- je peux alors me servir des exports de field -->
-
-<!-- InputField.svelte -->
-<script>
+  let count;
   let input;
 
-  export function focus() {
-    input.focus();
-  }
+  $: if(count % 3 === 0) input.focus();
 </script>
 
 <input bind:this={input} />
+<button on:click={() => count++} />
+<div>{count}</div>
 ```
+
+> On peut également binder des instances de composants pour accéder directement à des valeurs que l'instance exporte.
 
 ---
 

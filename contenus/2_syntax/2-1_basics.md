@@ -95,21 +95,9 @@ Si une variable `active` correspondant à la condition de notre classe, on peut 
 <div class:active>Item</div>
 ```
 
-## State Local
+## Assignations
 
-Un composant peut avoir un `state` local. C'est-à-dire de la donnée qu'il peut faire évoluer lui-même.
-
-En Svelte, déclarer un `state` local se fait simplement en déclarant un variable avec `let`.
-
-```html
-<script>
-  let age = 35; // state local
-</script>
-
-<div>J'ai {age + 1} ans</div>
-```
-
-En Svelte, mettre à jour du `state` et déclencher une mise à jour de l'interface est aussi simple qu'une assignation.
+En Svelte, réassigner une variable permet de déclencher des mises à jour.
 
 ```html
 <script>
@@ -142,46 +130,6 @@ On peut écouter des évènements via ces directives, on fournissant simplement 
 ```html
 <button on:click={grandir}>Joyeux anniversaire !</button>
 <button on:click={() => age = age + 1}>Joyeux anniversaire !</button> <!-- ça marche aussi -->
-```
-
-## Props
-
-Les `props` d'un composant sont déclarées avec `export let`:
-
-```html
-<script>
-  // fichier Profile.svelte
-  export let nom;
-  export let age = 0; // cela permet de définir une valeur par défaut
-</script>
-```
-
-Cela permet de fournir de la donnée au composant de la façon suivante, comme en JSX:
-
-```html
-<!-- fichier Trombinoscope.svelte -->
-<Profile nom="Romain" age="{35}" />
-```
-
-Comme en JSX, on peut également déstructurer un objet pour envoyer tous les champs en tant que `props`:
-
-```html
-<script>
-  const moi = {
-    nom: 'Romain',
-    age: 35,
-  };
-</script>
-
-<!-- fichier Trombinoscope.svelte -->
-<Profile {...moi} />
-```
-
-Si l'on définit pas de valeur par défaut à une `prop`, et qu'on l'intancie un composant sans cette `prop`, le compilateur va afficher un warning. De même si l'on fournit un `prop` qui n'existe pas à une instance.
-
-```html
-<!-- Cette instanciation va déclencher 2 warnings: 1 pour le `nom` manquant, et 1 pour la `taille` qui n'est pas prévue -->
-<Profile taille="{180}" />
 ```
 
 ---

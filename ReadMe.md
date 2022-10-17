@@ -30,19 +30,21 @@
 
 ### [Exercices](./contenus/2_syntax/2-5_exos.md)
 
-## 3) Les composants en détail
+## 3) Composants
 
 (Dans le dossier `projects`)
 
-### [Cycle de vie](./contenus/3_components/3-1_lifecycle.md)
+### [Props et State](./contenus/3_components/3-1_props_state.md)
 
-### [Évènements](./contenus/3_components/3-2_events.md)
+### [Cycle de vie](./contenus/3_components/3-2_lifecycle.md)
 
-### [Slots](./contenus/3_components/3-3_slots.md)
+### [Évènements](./contenus/3_components/3-3_events.md)
 
-### [Module context](./contenus/3_components/3-4_context_module.md)
+### [Slots](./contenus/3_components/3-4_slots.md)
 
-### [Special components](./contenus/3_components/3-5_special_components.md)
+### [Module context](./contenus/3_components/3-5_context_module.md)
+
+### [Special components](./contenus/3_components/3-6_special_components.md)
 
 (Début du projet fil-rouge)
 
