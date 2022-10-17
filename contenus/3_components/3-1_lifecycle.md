@@ -117,7 +117,7 @@ Si l'on veut faire des opérations spécifiques immédiatement après une mise �
 
 `tick` renvoie une promesse qui résoud dès que toutes les mises à jour en attente sont appliquées.
 
-```svelte
+```html
 <script>
   import { tick } from 'svelte';
 
@@ -155,7 +155,7 @@ export default function () {
 }
 ```
 
-```svelte
+```html
 <script>
   import setLifecycle from './utils.js';
 

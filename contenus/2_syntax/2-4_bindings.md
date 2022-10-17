@@ -69,7 +69,7 @@ Pour les inputs qui fonctionnent à plusieurs (radios, checkboxes), il faut util
 <!-- Les inputs checkbox s'ajoutent au sein d'un même tableau -->
 <input type="checkbox" bind:group={artists} value="John Lemon" />
 <input type="checkbox" bind:group={artists} value="Georges Bras-Pince" />
-<input type="checkbox" group={artists} value="Les Rolling Scones" />
+<input type="checkbox" bind:group={artists} value="Les Rolling Scones" />
 <input type="checkbox" bind:group={artists} value="Kanye Sud-Ouest" />
 ```
 

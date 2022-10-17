@@ -36,7 +36,7 @@ Permet d'utiliser des event listeners sur la `window` sans se soucier de les sup
 
 ## [`<svelte:body>`](https://svelte.dev/docs#template-syntax-svelte-body)
 
-Permet d'utiliser des event listeners sur le `body` sans se soucier de les supprimer lors de l'éventuelle destruction du composant.
+Permet d'utiliser des event listeners sur le `body`.
 
 ```svelte
 <svelte:body on:mouseenter={() => console.log('Entering body')}/>
