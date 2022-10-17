@@ -140,4 +140,25 @@ On peut intégrer du HTML pur avec `{@html}`
 
 ---
 
+## Exos
+
+```js
+const pikachu = {
+  name: 'Pikachu',
+  type: 'electric'
+}
+const salameche = {
+  name: 'Salameche',
+  type: 'fire'
+}
+```
+
+- Créer 2 `<button>` avec le nom de chaque Pokemon
+- Au clic sur 1 `<button>`, afficher une `<div>` avec toutes les infos (nom et type)
+- Si je clique sur l'autre `<button>`, remplacer les infos affichées par les nouvelles infos
+- Si je clique sur le `<button>` du Pokemon déjà affiché, ne rien afficher à part les 2 `<button>`
+- Prévoir une classe pour styliser le `<button>` sélectionné
+
+---
+
 ## à suivre: [Bindings](./2-4_bindings.md)

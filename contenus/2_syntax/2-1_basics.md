@@ -134,4 +134,12 @@ On peut écouter des évènements via ces directives, on fournissant simplement 
 
 ---
 
+## Exos
+
+- Afficher un nombre dans une `<div>`
+- Ajouter un `<button>` qui permet au clic d'incrémenter le nombre de 1
+- Changer la couleur du nombre via une classe si le nombre est > 10
+
+---
+
 ## à suivre: [Réactivité](./2-2_reactivity.md)

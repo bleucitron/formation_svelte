@@ -149,4 +149,11 @@ Cela peut notamment servir pour faire des calculs de position, de dimensions, ou
 
 ---
 
+## Exos
+
+- Créer 1 `<input>` texte lié à une variable `name`
+- Afficher la longueur de `name` dans une `<div>`
+
+---
+
 ## à suivre: [Exercices](./2-5_exos.md)

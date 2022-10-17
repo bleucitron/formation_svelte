@@ -118,4 +118,13 @@ Il est aussi possible de déclarer des blocks réactifs. Le block est réévalu�
 
 ---
 
+## Exos
+
+En vous basant sur l'exemple de la carotte, créer une petite application qui:
+- par défaut affiche le prix en € de la carotte dans une `<div>`
+- convertit le prix en ¥ au clic sur un `<button>`
+- penser à également changer le texte du `<button>` quand on passe de € à ¥
+
+---
+
 ## à suivre: [Blocks de compilation](./2-3_blocks.md)
