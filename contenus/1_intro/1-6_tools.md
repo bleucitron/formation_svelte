@@ -12,10 +12,13 @@ Pour travailler avec Svelte sur votre machine, vous avez besoin de:
 - [NPM](https://www.npmjs.com/)
 - un IDE, disons [VS Code](https://code.visualstudio.com/)
 
-### [Installer un projet Svelte](https://svelte.dev/blog/the-easiest-way-to-get-started)
+### [Installer un projet Svelte](https://svelte.dev/docs#getting-started)
 
 ```bash
-npx degit sveltejs/template my-new-project
+npm create vite@latest myapp -- --template svelte
+cd myapp
+npm install
+npm run dev
 ```
 
 ### Configurer VSCode
@@ -42,8 +45,8 @@ Ajouter:
 
 ```json
 "[svelte]": {
-      "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
+  "editor.defaultFormatter": "svelte.svelte-vscode"
+},
 ```
 
 3. Activer le formattage à la sauvegarde

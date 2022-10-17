@@ -26,7 +26,7 @@ Pour répondre à ces problématiques, plusieurs frameworks ont émergé, mais l
 
 ## Principes généraux
 
-Ces 3 frameworks partagent un consensus, en grande partie inspiré par React, et largement répandu aujourd'hui. Ce consensus s'est formé autour de 3 principes.
+React a "imposé" 3 principes, dont la plupart des frameworks se sont inspiré.
 
 ### Architecture par composants
 

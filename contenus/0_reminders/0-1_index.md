@@ -1,23 +1,5 @@
 # Rappels
 
-## Valeurs et variables
-
-### Une variable est un câble
-
-Une variable part d'un label et va vers une valeur.
-
-```js
-let x = 10;
-let y = x;
-x = 0; // y reste à 10
-```
-
-### Une variable ne pointe jamais vers une autre variable
-
-### Les valeurs flottent autour de notre code
-
-Les valeurs sont un peu comme des étoiles qui gravitent autour de notre code. Notre code ne fait qu'y faire référence, via des variables.
-
 ## Tableaux
 
 Il est souvent plus facile d'utiliser les méthodes fonctionnelles des tableaux pour les manipuler.

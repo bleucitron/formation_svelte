@@ -22,7 +22,7 @@ En 2011 une proposition de standard émerge pour apporter la notion de **modèle
 
 - [Web components specification](https://fr.wikipedia.org/wiki/Composants_web) (2011)
 
-Cette proposition n'a pas vraiment pris, et est toujours en cours de standardisation. Mais elle a inspiré de nouvelles initiatives à proposer des librairies de modèle de composants.
+Cette proposition a mis longtemps à être standardisée, et ne fait toujours pas l'unanimité. Mais elle a inspiré de nouvelles initiatives à proposer des librairies de modèle de composants.
 
 Celle qui a émergé comme la nouvelle référence du développement web front-end est React.
 
