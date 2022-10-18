@@ -103,4 +103,16 @@ Cela fonctionne aussi bien pour les évènements de composants que pour les év�
 
 ---
 
+## Exos
+
+Créer un composant `Choix` qui prend en `props` une `question`, et:
+- affiche la question
+- affiche 2 boutons "oui" et "non" qui représentent la réponse
+
+Ce composant doit générer un custom event pour chacune des réponses.
+
+Dans le composant parent, réagir différemment aux 2 réponses.
+
+---
+
 ## à suivre: [Composition](./3-4_slots.md)
