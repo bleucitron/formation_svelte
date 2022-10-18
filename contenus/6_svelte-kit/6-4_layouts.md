@@ -107,20 +107,15 @@ src/
 
 Dans ce cas, le `projects/+layout.svelte` va se cumuler avec le `+layout.svelte` pour tous les fichiers de la route `projects`, ainsi que les éventuelles `data` chargées par chaque layout.
 
-## [Groupes](https://kit.svelte.dev/docs/advanced-routing#advanced-layouts-group)
+## Autres
 
-TODO
-
-## [Resets](https://kit.svelte.dev/docs/advanced-routing#advanced-layouts-page)
-
-TODO
+Vous pouvez également créer des [groupes de layout](https://kit.svelte.dev/docs/advanced-routing#advanced-layouts-group), ainsi que des [resets de layout](https://kit.svelte.dev/docs/advanced-routing#advanced-layouts-page)
 
 ---
 
 ## Exos
 
 - créer un layout de base
-- créer un reset de layout pour les exos
 - créer un layout nesté pour touitter
 - créer une page d'erreur pour touitter
 
