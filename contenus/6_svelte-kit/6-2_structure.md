@@ -69,4 +69,4 @@ Le dossier pour vos tests éventuels.
 
 ---
 
-## à suivre: [Routes](./6-3_routes.md)
+## à suivre: [Routes](./6-3_routing.md)

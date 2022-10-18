@@ -43,4 +43,4 @@ import { browser, dev } from '$app/env'; // non exhaustif
 - `browser`, booléen informant si l'exécution est côté client ou serveur
 - `dev`, booléen informant si l'on est en mode développement
 
-## à suivre: [Builds et déploiements](./6-6_build_and_deploy.md)
+## à suivre: [Builds et déploiements](./6-7_build_and_deploy.md)

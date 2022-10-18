@@ -140,4 +140,4 @@ Des options existent pour traiter ce genre de cas : `event.locals`, `$page.data`
 - Charger les pokémons via `load`
 - Faire une page avec la liste complète à gauche et le détail du pokémon a droite
 
-## à suivre: [Modules](./6-5_modules.md)
+## à suivre: [Modules](./6-6_modules.md)
