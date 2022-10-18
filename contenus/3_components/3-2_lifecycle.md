@@ -172,4 +172,4 @@ export default function () {
 
 ---
 
-## à suivre: [Évènements](./3-2_events.md)
+## à suivre: [Évènements](./3-3_events.md)
