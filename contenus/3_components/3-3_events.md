@@ -103,4 +103,4 @@ Cela fonctionne aussi bien pour les évènements de composants que pour les év�
 
 ---
 
-## à suivre: [Composition](./3-3_slots.md)
+## à suivre: [Composition](./3-4_slots.md)

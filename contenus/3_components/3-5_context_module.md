@@ -39,4 +39,4 @@ Ces exports fonctionnent comme des `export` classiques. La seule différence est
 
 ---
 
-## à suivre: [Composants spéciaux](./3-5_special_components.md)
+## à suivre: [Composants spéciaux](./3-6_special_components.md)
