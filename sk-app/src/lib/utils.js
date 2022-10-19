@@ -1,12 +1,14 @@
 const url = 'https://pokeapi.co/api/v2/pokemon';
 
-export function fetchAll() {
+export function fetchAll(fetch) {
   return Promise.all(
-    Array.from({ length: 151 }, (_, index) => index + 1).map(fetchPokemon),
+    Array.from({ length: 151 }, (_, index) => index + 1).map(i =>
+      fetchPokemon(i, fetch),
+    ),
   );
 }
 
-export async function fetchPokemon(id) {
+export async function fetchPokemon(id, fetch) {
   const data = await fetch(`${url}/${id}`).then(r => r.json());
   delete data.moves;
   delete data.abilities;
