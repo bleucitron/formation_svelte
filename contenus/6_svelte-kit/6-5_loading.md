@@ -46,7 +46,7 @@ export async function load ({ fetch }) { // il est important d'utiliser ce fetch
   const data = await resp.json();
 
   return {
-    name: data.name
+    name: data.name,
     birth_year: data.birth_year
   };
 };

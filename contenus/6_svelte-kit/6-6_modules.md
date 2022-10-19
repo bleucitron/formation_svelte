@@ -5,7 +5,7 @@ Dans une page SvelteKit, il est possible d'accéder à différents modules super
 ## [`$app/stores`](https://kit.svelte.dev/docs/modules#$app-stores)
 
 ```js
-import { navigating, page, session } from '$app/stores';
+import { navigating, page, updated } from '$app/stores';
 ```
 
 - [`page`](https://kit.svelte.dev/docs/modules#$app-stores-page) fournit des informations sur la page courante.
@@ -17,7 +17,7 @@ import { navigating, page, session } from '$app/stores';
 }
 ```
 
-- [`session`](https://kit.svelte.dev/docs/modules#$app-stores-session) donne des infos sur la session courante, comme pour `load`.
+- [`updated`](https://kit.svelte.dev/docs/modules#$app-stores-updated) permet de savoir si la version de l'app a changé
 
 ## [`$app/navigation`](https://kit.svelte.dev/docs/modules#$app-navigation)
 
