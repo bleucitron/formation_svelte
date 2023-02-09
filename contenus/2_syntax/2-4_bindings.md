@@ -51,29 +51,29 @@ Ce genre de binding fonctionne pour tous les éléments de formulaire classique,
 
 Personnellement, j'essaie de ne m'en servir que pour les éléments de formulaire, et éventuellement des composants de wrapper autour d'éléments de formulaire.
 
-## Bindings de groupe
+## [Bindings de groupe](https://svelte.dev/tutorial/checkbox-inputs)
 
 Pour les inputs qui fonctionnent à plusieurs (radios, checkboxes), il faut utiliser un `bind:group`.
 
 ```svelte
 <script>
-  let favoriteMusic = 'Rap';
+  let favorite = 'Rap';
   let artists = [];
 </script>
 
 <!-- Les inputs radio sont ainsi mutuellement exclusifs -->
-<input type="radio" bind:group={favorite} value="Rap" />
-<input type="radio" bind:group={favorite} value="Rock" />
-<input type="radio" bind:group={favorite} value="Classique" />
+<input type="radio" bind:group={favorite} name='music' value="Rap" />
+<input type="radio" bind:group={favorite} name='music' value="Rock" />
+<input type="radio" bind:group={favorite} name='music' value="Classique" />
 
 <!-- Les inputs checkbox s'ajoutent au sein d'un même tableau -->
-<input type="checkbox" bind:group={artists} value="John Lemon" />
-<input type="checkbox" bind:group={artists} value="Georges Bras-Pince" />
-<input type="checkbox" bind:group={artists} value="Les Rolling Scones" />
-<input type="checkbox" bind:group={artists} value="Kanye Sud-Ouest" />
+<input type="checkbox" bind:group={artists} name='musician' value="John Lemon" />
+<input type="checkbox" bind:group={artists} name='musician' value="Georges Bras-Pince" />
+<input type="checkbox" bind:group={artists} name='musician' value="Les Rolling Scones" />
+<input type="checkbox" bind:group={artists} name='musician' value="Kanye Sud-Ouest" />
 ```
 
-## Binding de boucle
+## [Binding de boucle](https://svelte.dev/tutorial/each-block-bindings)
 
 Les bindings fonctionnent également pour les boucles `{#each}`.
 
@@ -97,7 +97,7 @@ Les bindings fonctionnent également pour les boucles `{#each}`.
 {/each}
 ```
 
-## Dimensions
+## [Dimensions](https://svelte.dev/tutorial/dimensions)
 
 On peut accéder facilement aux dimensions d'un élément via des bindings de dimensions: `clientWidth`, `clientHeight`, `offsetWidth` et `offsetHeight`.
 
@@ -110,7 +110,7 @@ On peut accéder facilement aux dimensions d'un élément via des bindings de di
 <div bind:clientWidth={w} bind:clientHeight={h}>Coucou</div>
 ```
 
-## `this`
+## [`this`](https://svelte.dev/tutorial/bind-this)
 
 En Svelte comme dans les autres frameworks, on ne manipule pas directement les éléments HTML.
 
@@ -134,10 +134,10 @@ Cela peut notamment servir pour faire des calculs de position, de dimensions, ou
 
 ```html
 <script>
-  let count;
+  let count = 0;
   let input;
 
-  $: if(count % 3 === 0) input.focus();
+  $: if(count % 3 === 0) input?.focus();
 </script>
 
 <input bind:this={input} />
