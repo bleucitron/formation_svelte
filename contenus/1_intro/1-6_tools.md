@@ -15,11 +15,15 @@ Pour travailler avec Svelte sur votre machine, vous avez besoin de:
 ### [Installer un projet Svelte](https://svelte.dev/docs#getting-started)
 
 ```bash
-npm create vite@latest myapp -- --template svelte
-cd myapp
+npm create vite@latest project -- --template svelte
+cd project
 npm install
 npm run dev
 ```
+
+Une fois l'installation faite, vous trouverez dans `project` les fichiers que Vite aura créé pour vous, notamment `src/App.svelte`, `src/app.css`, et `lib/Counter.svelte`.
+
+Il est recommandé de vider ces fichiers de leur code pour repartir d'une feuille blanche.
 
 ### Configurer VSCode
 

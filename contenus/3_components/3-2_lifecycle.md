@@ -1,6 +1,6 @@
 # Cycle de vie
 
-À partir de maintenant, les exercices seront faits dans le dossier `project`. N'oubliez pas d'[installer Svelte](../1_intro/1-6_tools.md).
+À partir de maintenant, les exercices seront faits dans le dossier `project`, que vous pouvez créer en [installant Svelte avec Vite](../1_intro/1-6_tools.md).
 
 ## Rappels
 
@@ -167,7 +167,9 @@ export default function () {
 
 ## Exos
 
-- afficher une horloge lorsqu'on clique sur un bouton, et l'enlever en recliquant dessus
+- créer un composant `Clock.svelte` qui affiche l'heure actuelle.
+  - ajouter à `App.svelte` un bouton permettant d'afficher ou de désafficher une instance de `Clock`.
+  - faire bien attention à éviter de cumuler les intervalles
 - afficher le premier tweet de https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json
 
 ---
