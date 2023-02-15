@@ -9,7 +9,22 @@ Dans ce cas, il est possible d'utiliser un store `readable`. La définition du s
 ```js
 import { readable } from 'svelte/store';
 
-const count = readable(0);
+const count = readable(0, set => {
+
+  /*
+    cette fonction sera jouée lorsque le store passe de 0 à 1 abonné.
+    set est une fonction permettant de mettre à jour le store.
+    utile pour s'abonner.
+  */
+
+  return () => {
+    /*
+      cette fonction sera jouée lorsque plus aucun composant n'est abonné au store.
+      utile pour se désabonner
+    */
+  }
+
+});
 ```
 
 Des cas d'utilisation classiques:
